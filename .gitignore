@@ -5,3 +5,16 @@
 node_modules/
 inspo
 triage/
+
+# Dubai Open Data CSV exports (large files — place in data/ locally)
+real-estate-intelligence/data/*.csv
+real-estate-intelligence/data/*.xlsx
+
+# Pipeline outputs (generated, not source)
+real-estate-intelligence/outputs/*.csv
+real-estate-intelligence/outputs/*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/

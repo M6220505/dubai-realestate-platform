@@ -14,6 +14,10 @@ pandas>=2.0.0
 # Scheduling (optional local scheduler)
 schedule>=1.2.0
 
+# Dashboard
+streamlit>=1.35.0
+plotly>=5.20.0
+
 # Testing
 pytest>=7.4.0
 
