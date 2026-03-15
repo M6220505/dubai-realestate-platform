@@ -44,10 +44,10 @@ real-estate-intelligence/
 
 ## Setup
 
+cd real-estate-intelligence
 pip install -r requirements.txt
 playwright install
-python pipeline/run_pipeline.py
-
+python -m pipeline.weekly_pipeline --dry-run
 
 
 ## Example Output
