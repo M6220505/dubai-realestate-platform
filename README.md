@@ -8,7 +8,7 @@ Automated data pipeline for collecting, processing, and analyzing Dubai property
 - Weekly data pipelines
 - Area-level market analysis
 - Price trend insights
-- Price trend insights
+  
 
 
 
@@ -19,8 +19,7 @@ Automated data pipeline for collecting, processing, and analyzing Dubai property
 3. Raw listings are stored as JSON/CSV
 4. Pandas pipeline cleans and normalizes the data
 5. PostgreSQL stores structured records
-6. Analytics layer calculates area trends, average price per sqft, and summary reports
-
+6. Analytics layer calculates area trends and price per sqft
 
 
 ## Tech Stack
@@ -35,10 +34,10 @@ Automated data pipeline for collecting, processing, and analyzing Dubai property
 ## Project Structure
 
 real-estate-intelligence/
-  pipeline/
-  scrapers/
-  analytics/
-  tests/
+├── pipeline/
+├── scrapers/
+├── analytics/
+└── tests/
 
 
 
