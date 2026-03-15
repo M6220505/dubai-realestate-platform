@@ -1,20 +1,26 @@
-Dubai Real Estate Intelligence Platform
+# Dubai Real Estate Intelligence Platform
 
-Data pipeline that collects, processes, and analyzes Dubai property listings from major portals.
+Automated data pipeline that collects and analyzes Dubai property listings to generate market insights.
 
-Features
-- Property data scraping
-- Weekly data pipelines
-- Area-based analysis
-- Market insights
+## Data Sources
+- PropertyFinder
+- Bayut
+- Dubizzle
 
-Tech
+## Features
+- Automated web scraping with Playwright
+- Weekly data collection pipeline
+- Area-based property price analysis
+- Structured dataset generation
+
+## Tech Stack
 - Python
 - Playwright
 - Pandas
 
-Structure
+## Project Structure
 real-estate-intelligence/
     pipeline/
     scrapers/
+    analysis/
     tests/
