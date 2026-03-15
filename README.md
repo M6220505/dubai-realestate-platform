@@ -25,3 +25,15 @@ real-estate-intelligence/
 pip install -r requirements.txt
 playwright install
 python pipeline/run_pipeline.py
+
+
+## Example Output
+
+Average price per sqft by area
+
+| Area | Avg Price/sqft |
+|-----|-----|
+| Dubai Marina | 1,850 AED |
+| Downtown Dubai | 2,450 AED |
+| JVC | 1,050 AED |
+
