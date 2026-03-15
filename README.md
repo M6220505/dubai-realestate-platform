@@ -37,3 +37,11 @@ Average price per sqft by area
 | Downtown Dubai | 2,450 AED |
 | JVC | 1,050 AED |
 
+## Sample Data
+
+Example output datasets are provided in:
+
+data-samples/
+
+- sample_listings.csv
+- area_price_summary.csv
