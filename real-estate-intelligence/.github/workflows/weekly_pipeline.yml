@@ -1,0 +1,95 @@
+name: Weekly Dubai Real Estate Pipeline
+
+on:
+  # Every Sunday at 03:00 AM UTC
+  schedule:
+    - cron: "0 3 * * 0"
+
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+    inputs:
+      max_pages:
+        description: "Max pages per area per scraper"
+        required: false
+        default: "20"
+      areas:
+        description: "Comma-separated list of areas (leave empty for all)"
+        required: false
+        default: ""
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        working-directory: real-estate-intelligence
+        run: pip install -r requirements.txt
+
+      - name: Run weekly pipeline
+        working-directory: real-estate-intelligence
+        env:
+          MAX_PAGES: ${{ github.event.inputs.max_pages || '20' }}
+        run: |
+          AREAS="${{ github.event.inputs.areas }}"
+          if [ -z "$AREAS" ]; then
+            python -m pipeline.weekly_pipeline --max-pages $MAX_PAGES
+          else
+            # Convert comma-separated to space-separated quoted args
+            python -m pipeline.weekly_pipeline \
+              --areas $(echo "$AREAS" | tr ',' '\n' | xargs -I{} echo '"{}"' | tr '\n' ' ') \
+              --max-pages $MAX_PAGES
+          fi
+
+      - name: Upload raw data artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: raw-data-${{ github.run_number }}
+          path: real-estate-intelligence/data/raw/
+          retention-days: 30
+
+      - name: Upload processed data artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: processed-data-${{ github.run_number }}
+          path: real-estate-intelligence/data/processed/
+          retention-days: 90
+
+      - name: Upload weekly report artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: weekly-report-${{ github.run_number }}
+          path: real-estate-intelligence/reports/
+          retention-days: 365
+
+      - name: Upload government datasets artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: government-datasets-${{ github.run_number }}
+          path: real-estate-intelligence/datasets/government/
+          retention-days: 365
+
+      - name: Commit and push updated data
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add real-estate-intelligence/data/processed/
+          git add real-estate-intelligence/reports/
+          git add real-estate-intelligence/datasets/government/
+          git diff --cached --quiet || git commit -m "chore: weekly pipeline run $(date -u +%Y-%m-%d)"
+          git push

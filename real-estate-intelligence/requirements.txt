@@ -1,0 +1,21 @@
+# Core HTTP + parsing
+requests>=2.31.0
+urllib3>=2.0.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Playwright (optional — only needed for JS-heavy pages)
+# Install browser binaries separately: playwright install chromium
+playwright>=1.42.0
+
+# Data processing
+pandas>=2.0.0
+
+# Scheduling (optional local scheduler)
+schedule>=1.2.0
+
+# Testing
+pytest>=7.4.0
+
+# Type checking / dev
+# mypy>=1.8.0
