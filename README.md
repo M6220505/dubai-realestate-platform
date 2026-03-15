@@ -3,34 +3,56 @@
 Automated data pipeline for collecting, processing, and analyzing Dubai property listings from major portals (PropertyFinder, Bayut, Dubizzle).
 
 ## Features
+
 - Automated web scraping
 - Weekly data pipelines
 - Area-level market analysis
 - Price trend insights
+- Price trend insights
+
+
+
+## Data Pipeline Architecture
+
+1. Property portals (PropertyFinder, Bayut, Dubizzle)
+2. Playwright scrapers collect listing data
+3. Raw listings are stored as JSON/CSV
+4. Pandas pipeline cleans and normalizes the data
+5. PostgreSQL stores structured records
+6. Analytics layer calculates area trends, average price per sqft, and summary reports
+
+
 
 ## Tech Stack
+
 - Python
 - Playwright
 - Pandas
 - PostgreSQL
 
+
+
 ## Project Structure
+
 real-estate-intelligence/
   pipeline/
   scrapers/
   analytics/
   tests/
 
+
+
 ## Setup
+
 pip install -r requirements.txt
 playwright install
 python pipeline/run_pipeline.py
 
 
+
 ## Example Output
 
 Average price per sqft by area
-
 | Area | Avg Price/sqft |
 |-----|-----|
 | Dubai Marina | 1,850 AED |
