@@ -1312,6 +1312,23 @@ document.querySelectorAll('.feature-card, .step-card, .area-card, .plan-card, .s
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
 });
+
+function submitEmail() {
+  const email = document.getElementById('emailCapture').value;
+  if (!email || !email.includes('@')) {
+    document.getElementById('emailCapture').style.borderColor = '#ef4444';
+    return;
+  }
+  fetch('https://formspree.io/f/mdawpjwz', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({email: email, source: 'dubaiintel-landing'})
+  });
+  document.getElementById('emailCapture').style.borderColor = '#22c55e';
+  document.getElementById('emailSuccess').style.display = 'block';
+  document.getElementById('emailCapture').value = '';
+}
+
 </script>
 </body>
 </html>
