@@ -1,0 +1,65 @@
+{
+  "week": "2026-W11",
+  "date": "2026-03-16",
+  "status": "success",
+  "duration_sec": 443.99,
+  "scrapers": {
+    "propertyfinder": {
+      "status": "success",
+      "count": 1015,
+      "summary": {
+        "source": "propertyfinder",
+        "date": "2026-03-16",
+        "total": 1015,
+        "errors": 0,
+        "by_area": {
+          "Dubai Marina": 203,
+          "Downtown Dubai": 203,
+          "Palm Jumeirah": 203,
+          "Business Bay": 203,
+          "Jumeirah Beach Residence": 203
+        }
+      }
+    },
+    "bayut": {
+      "status": "success",
+      "count": 0,
+      "summary": {
+        "source": "bayut",
+        "date": "2026-03-16",
+        "total": 0,
+        "errors": 0,
+        "by_area": {
+          "Dubai Marina": 0,
+          "Downtown Dubai": 0,
+          "Palm Jumeirah": 0,
+          "Business Bay": 0,
+          "Jumeirah Beach Residence": 0
+        }
+      }
+    },
+    "dubizzle": {
+      "status": "success",
+      "count": 0,
+      "summary": {
+        "source": "dubizzle",
+        "date": "2026-03-16",
+        "total": 0,
+        "errors": 0,
+        "by_area": {
+          "Dubai Marina": 0,
+          "Downtown Dubai": 0,
+          "Palm Jumeirah": 0,
+          "Business Bay": 0,
+          "Jumeirah Beach Residence": 0
+        }
+      }
+    }
+  },
+  "gov_data": {
+    "status": "no_data",
+    "tier": 4
+  },
+  "listings_valid": 1015,
+  "listings_rejected": 0
+}

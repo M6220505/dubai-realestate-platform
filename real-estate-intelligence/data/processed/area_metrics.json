@@ -1,0 +1,38 @@
+[
+  {
+    "area":"Dubai Marina",
+    "price":1500000,
+    "rent":95000,
+    "growth":12.5,
+    "transactions":320,
+    "yield":6.3333333333,
+    "score":20.3333333333
+  },
+  {
+    "area":"Business Bay",
+    "price":1300000,
+    "rent":88000,
+    "growth":15.2,
+    "transactions":410,
+    "yield":6.7692307692,
+    "score":25.1876923077
+  },
+  {
+    "area":"Dubai Hills",
+    "price":1800000,
+    "rent":110000,
+    "growth":18.1,
+    "transactions":210,
+    "yield":6.1111111111,
+    "score":18.0844444444
+  },
+  {
+    "area":"JVC",
+    "price":900000,
+    "rent":65000,
+    "growth":10.4,
+    "transactions":500,
+    "yield":7.2222222222,
+    "score":27.0488888889
+  }
+]

@@ -1,0 +1,2036 @@
+{
+  "metadata": {
+    "source": "Dubai Land Department",
+    "dataset": "Rent Contracts",
+    "load_date": "2026-03-16T18:55:51.692592",
+    "record_count": 5000
+  },
+  "by_area": {
+    "Saih Shuaib 2": {
+      "count": 39,
+      "avg_rent": 575992.9487179487,
+      "min_rent": 15000.0,
+      "max_rent": 3571320.0
+    },
+    "Dubai Investment Park First": {
+      "count": 96,
+      "avg_rent": 1055479.6666666667,
+      "min_rent": 6500.0,
+      "max_rent": 10000000.0
+    },
+    "Al Thanyah First": {
+      "count": 46,
+      "avg_rent": 642550.4130434783,
+      "min_rent": 20000.0,
+      "max_rent": 23000000.0
+    },
+    "Al Warsan First": {
+      "count": 153,
+      "avg_rent": 85459.66013071896,
+      "min_rent": 10000.0,
+      "max_rent": 2000000.0
+    },
+    "Muhaisanah Second": {
+      "count": 143,
+      "avg_rent": 4037130.804195804,
+      "min_rent": 6000.0,
+      "max_rent": 423360000.0
+    },
+    "Al Thanyah Fifth": {
+      "count": 82,
+      "avg_rent": 138755.63414634147,
+      "min_rent": 1000.0,
+      "max_rent": 825000.0
+    },
+    "AL TWAR FIFTH": {
+      "count": 28,
+      "avg_rent": 54131.96428571428,
+      "min_rent": 15000.0,
+      "max_rent": 160000.0
+    },
+    "Trade Center Second": {
+      "count": 25,
+      "avg_rent": 1237023.6,
+      "min_rent": 15000.0,
+      "max_rent": 22600000.0
+    },
+    "Al Buteen": {
+      "count": 24,
+      "avg_rent": 212395.5,
+      "min_rent": 30000.0,
+      "max_rent": 760000.0
+    },
+    "Al Barsha First": {
+      "count": 99,
+      "avg_rent": 206419.75757575757,
+      "min_rent": 12000.0,
+      "max_rent": 3950000.0
+    },
+    "Al Muteena": {
+      "count": 54,
+      "avg_rent": 147658.37037037036,
+      "min_rent": 5000.0,
+      "max_rent": 2050000.0
+    },
+    "Al Goze Industrial Fourth": {
+      "count": 47,
+      "avg_rent": 577870.2978723404,
+      "min_rent": 20000.0,
+      "max_rent": 5000000.0
+    },
+    "Al Wasl": {
+      "count": 8,
+      "avg_rent": 160178.25,
+      "min_rent": 10000.0,
+      "max_rent": 752000.0
+    },
+    "Um Hurair Second": {
+      "count": 17,
+      "avg_rent": 579079.4117647059,
+      "min_rent": 8800.0,
+      "max_rent": 4880040.0
+    },
+    "Al Goze Industrial First": {
+      "count": 38,
+      "avg_rent": 359942.94736842107,
+      "min_rent": 1000.0,
+      "max_rent": 3213000.0
+    },
+    "Al Goze Third": {
+      "count": 71,
+      "avg_rent": 1513011.5211267606,
+      "min_rent": 3895.0,
+      "max_rent": 12000000.0
+    },
+    "Al Merkadh": {
+      "count": 12,
+      "avg_rent": 96149.08333333333,
+      "min_rent": 50000.0,
+      "max_rent": 215000.0
+    },
+    "Al Qusais Industrial Third": {
+      "count": 14,
+      "avg_rent": 2172058.9285714286,
+      "min_rent": 42857.0,
+      "max_rent": 29000000.0
+    },
+    "Me'Aisem First": {
+      "count": 46,
+      "avg_rent": 299703.2826086957,
+      "min_rent": 19000.0,
+      "max_rent": 5307875.0
+    },
+    "Al Nahda Second": {
+      "count": 103,
+      "avg_rent": 92537.57281553397,
+      "min_rent": 15000.0,
+      "max_rent": 3080102.0
+    },
+    "Nadd Hessa": {
+      "count": 106,
+      "avg_rent": 246466.98113207548,
+      "min_rent": 22000.0,
+      "max_rent": 13220000.0
+    },
+    "Naif": {
+      "count": 132,
+      "avg_rent": 270933.4090909091,
+      "min_rent": 12000.0,
+      "max_rent": 6500000.0
+    },
+    "Muhaisanah Fourth": {
+      "count": 75,
+      "avg_rent": 49899.90666666667,
+      "min_rent": 18522.0,
+      "max_rent": 900000.0
+    },
+    "Jabal Ali Industrial First": {
+      "count": 194,
+      "avg_rent": 1885856.6340206186,
+      "min_rent": 540.0,
+      "max_rent": 29613600.0
+    },
+    "Rega Al Buteen": {
+      "count": 25,
+      "avg_rent": 278859.44,
+      "min_rent": 2500.0,
+      "max_rent": 2000000.0
+    },
+    "Port Saeed": {
+      "count": 56,
+      "avg_rent": 335943.9285714286,
+      "min_rent": 10000.0,
+      "max_rent": 13330000.0
+    },
+    "Al Rega": {
+      "count": 38,
+      "avg_rent": 108034.1052631579,
+      "min_rent": 16000.0,
+      "max_rent": 508200.0
+    },
+    "Trade Center First": {
+      "count": 53,
+      "avg_rent": 416958.88679245283,
+      "min_rent": 10000.0,
+      "max_rent": 14000000.0
+    },
+    "Madinat Al Mataar": {
+      "count": 23,
+      "avg_rent": 124072.04347826086,
+      "min_rent": 24000.0,
+      "max_rent": 1316840.0
+    },
+    "Al Goze Industrial Second": {
+      "count": 134,
+      "avg_rent": 864363.4029850747,
+      "min_rent": 17160.0,
+      "max_rent": 18000000.0
+    },
+    "Warsan Fourth": {
+      "count": 35,
+      "avg_rent": 80772.68571428572,
+      "min_rent": 22000.0,
+      "max_rent": 1500000.0
+    },
+    "Al Murqabat": {
+      "count": 104,
+      "avg_rent": 412164.54807692306,
+      "min_rent": 5000.0,
+      "max_rent": 7891871.0
+    },
+    "Wadi Al Safa 6": {
+      "count": 20,
+      "avg_rent": 211475.0,
+      "min_rent": 85000.0,
+      "max_rent": 450000.0
+    },
+    "Al Mararr": {
+      "count": 90,
+      "avg_rent": 57097.311111111114,
+      "min_rent": 10000.0,
+      "max_rent": 1175000.0
+    },
+    "Al Baraha": {
+      "count": 44,
+      "avg_rent": 32149.136363636364,
+      "min_rent": 15000.0,
+      "max_rent": 118000.0
+    },
+    "Oud Metha": {
+      "count": 38,
+      "avg_rent": 87809.94736842105,
+      "min_rent": 12000.0,
+      "max_rent": 512703.0
+    },
+    "Al Goze First": {
+      "count": 8,
+      "avg_rent": 98854.0,
+      "min_rent": 10000.0,
+      "max_rent": 338970.0
+    },
+    "AL QUSAIS": {
+      "count": 65,
+      "avg_rent": 239868.8153846154,
+      "min_rent": 13000.0,
+      "max_rent": 11500000.0
+    },
+    "Mankhool": {
+      "count": 77,
+      "avg_rent": 278275.87012987013,
+      "min_rent": 10000.0,
+      "max_rent": 7200000.0
+    },
+    "Mirdif": {
+      "count": 87,
+      "avg_rent": 171061.71264367815,
+      "min_rent": 28000.0,
+      "max_rent": 3264661.0
+    },
+    "Al Barsha South Fourth": {
+      "count": 90,
+      "avg_rent": 84910.0,
+      "min_rent": 20000.0,
+      "max_rent": 791910.0
+    },
+    "Marsa Dubai": {
+      "count": 110,
+      "avg_rent": 122075.3,
+      "min_rent": 10000.0,
+      "max_rent": 400000.0
+    },
+    "Business Bay": {
+      "count": 127,
+      "avg_rent": 228959.57480314962,
+      "min_rent": 1000.0,
+      "max_rent": 15500000.0
+    },
+    "Hor Al Anz East": {
+      "count": 46,
+      "avg_rent": 143503.5652173913,
+      "min_rent": 10000.0,
+      "max_rent": 4000000.0
+    },
+    "Hor Al Anz": {
+      "count": 62,
+      "avg_rent": 56322.56451612903,
+      "min_rent": 1.0,
+      "max_rent": 650000.0
+    },
+    "Al Qusais Industrial First": {
+      "count": 35,
+      "avg_rent": 3183528.4285714286,
+      "min_rent": 31000.0,
+      "max_rent": 29040000.0
+    },
+    "Al Saffa Second": {
+      "count": 5,
+      "avg_rent": 276202.0,
+      "min_rent": 36000.0,
+      "max_rent": 605010.0
+    },
+    "Al Karama": {
+      "count": 137,
+      "avg_rent": 133658.17518248176,
+      "min_rent": 15000.0,
+      "max_rent": 7000000.0
+    },
+    "Al Hebiah Fifth": {
+      "count": 17,
+      "avg_rent": 307164.82352941175,
+      "min_rent": 30000.0,
+      "max_rent": 4282571.0
+    },
+    "Ras Al Khor Industrial Third": {
+      "count": 32,
+      "avg_rent": 239001.6875,
+      "min_rent": 7200.0,
+      "max_rent": 2996200.0
+    },
+    "Al Qusais Industrial Second": {
+      "count": 16,
+      "avg_rent": 82705.9375,
+      "min_rent": 33149.0,
+      "max_rent": 463019.0
+    },
+    "Dubai Investment Park Second": {
+      "count": 73,
+      "avg_rent": 681312.1369863014,
+      "min_rent": 1000.0,
+      "max_rent": 4379000.0
+    },
+    "Al Hamriya Port": {
+      "count": 1,
+      "avg_rent": 40700.0,
+      "min_rent": 40700.0,
+      "max_rent": 40700.0
+    },
+    "Al Suq Al Kabeer": {
+      "count": 81,
+      "avg_rent": 125641.41975308642,
+      "min_rent": 15000.0,
+      "max_rent": 1692075.0
+    },
+    "Burj Khalifa": {
+      "count": 68,
+      "avg_rent": 667395.0,
+      "min_rent": 12000.0,
+      "max_rent": 32129361.0
+    },
+    "Al Nahda First": {
+      "count": 79,
+      "avg_rent": 55072.08860759494,
+      "min_rent": 5000.0,
+      "max_rent": 259612.0
+    },
+    "Wadi Al Safa 7": {
+      "count": 10,
+      "avg_rent": 163525.8,
+      "min_rent": 73720.0,
+      "max_rent": 320000.0
+    },
+    "Jumeirah Second": {
+      "count": 8,
+      "avg_rent": 255556.125,
+      "min_rent": 80000.0,
+      "max_rent": 800000.0
+    },
+    "Al Ras": {
+      "count": 29,
+      "avg_rent": 290945.5172413793,
+      "min_rent": 15000.0,
+      "max_rent": 1400000.0
+    },
+    "Al Hebiah Third": {
+      "count": 8,
+      "avg_rent": 105125.0,
+      "min_rent": 25000.0,
+      "max_rent": 340000.0
+    },
+    "Al Jadaf": {
+      "count": 34,
+      "avg_rent": 465657.23529411765,
+      "min_rent": 20000.0,
+      "max_rent": 13000000.0
+    },
+    "Eyal Nasser": {
+      "count": 33,
+      "avg_rent": 140625.15151515152,
+      "min_rent": 15000.0,
+      "max_rent": 1600000.0
+    },
+    "Wadi Al Safa 2": {
+      "count": 23,
+      "avg_rent": 74463.26086956522,
+      "min_rent": 27500.0,
+      "max_rent": 200000.0
+    },
+    "Jabal Ali First": {
+      "count": 137,
+      "avg_rent": 128321.75182481752,
+      "min_rent": 15000.0,
+      "max_rent": 3039200.0
+    },
+    "Um Ramool": {
+      "count": 15,
+      "avg_rent": 130698.2,
+      "min_rent": 17500.0,
+      "max_rent": 468379.0
+    },
+    "Palm Jumeirah": {
+      "count": 38,
+      "avg_rent": 270753.2894736842,
+      "min_rent": 20160.0,
+      "max_rent": 1500000.0
+    },
+    "Al Saffa First": {
+      "count": 13,
+      "avg_rent": 353011.07692307694,
+      "min_rent": 55000.0,
+      "max_rent": 1900000.0
+    },
+    "Al Thanayah Fourth": {
+      "count": 15,
+      "avg_rent": 183109.46666666667,
+      "min_rent": 50000.0,
+      "max_rent": 638000.0
+    },
+    "Al Bada": {
+      "count": 43,
+      "avg_rent": 131675.0,
+      "min_rent": 18975.0,
+      "max_rent": 702798.0
+    },
+    "Al Goze Industrial Third": {
+      "count": 25,
+      "avg_rent": 563059.68,
+      "min_rent": 30000.0,
+      "max_rent": 3434400.0
+    },
+    "OUD AL MUTEENA": {
+      "count": 1,
+      "avg_rent": 98000.0,
+      "min_rent": 98000.0,
+      "max_rent": 98000.0
+    },
+    "Al Warqa First": {
+      "count": 59,
+      "avg_rent": 53320.35593220339,
+      "min_rent": 28000.0,
+      "max_rent": 200000.0
+    },
+    "Nad Al Shiba First": {
+      "count": 11,
+      "avg_rent": 94545.45454545454,
+      "min_rent": 12000.0,
+      "max_rent": 330000.0
+    },
+    "Ras Al Khor Industrial Second": {
+      "count": 32,
+      "avg_rent": 118973.65625,
+      "min_rent": 15000.0,
+      "max_rent": 584342.0
+    },
+    "Jabal Ali Industrial Second": {
+      "count": 3,
+      "avg_rent": 1662747.3333333333,
+      "min_rent": 38000.0,
+      "max_rent": 4908242.0
+    },
+    "Al Barshaa South Third": {
+      "count": 29,
+      "avg_rent": 51118.65517241379,
+      "min_rent": 24000.0,
+      "max_rent": 85000.0
+    },
+    "Al Hebiah Second": {
+      "count": 9,
+      "avg_rent": 66248.33333333333,
+      "min_rent": 29000.0,
+      "max_rent": 111611.0
+    },
+    "Al Thanyah Third": {
+      "count": 35,
+      "avg_rent": 116076.08571428571,
+      "min_rent": 38000.0,
+      "max_rent": 271678.0
+    },
+    "Al Raffa": {
+      "count": 65,
+      "avg_rent": 538149.8153846153,
+      "min_rent": 5000.0,
+      "max_rent": 16120000.0
+    },
+    "Al Khabeesi": {
+      "count": 43,
+      "avg_rent": 62979.3023255814,
+      "min_rent": 10000.0,
+      "max_rent": 346500.0
+    },
+    "Wadi Al Safa 5": {
+      "count": 42,
+      "avg_rent": 213711.14285714287,
+      "min_rent": 24196.0,
+      "max_rent": 5293555.0
+    },
+    "Al Qusais Industrial Fifth": {
+      "count": 26,
+      "avg_rent": 49711.53846153846,
+      "min_rent": 30000.0,
+      "max_rent": 120000.0
+    },
+    "Al Garhoud": {
+      "count": 47,
+      "avg_rent": 322185.89361702127,
+      "min_rent": 10.0,
+      "max_rent": 6300000.0
+    },
+    "Al Safouh Second": {
+      "count": 28,
+      "avg_rent": 583551.6785714285,
+      "min_rent": 67500.0,
+      "max_rent": 5892883.0
+    },
+    "Madinat Dubai Almelaheyah": {
+      "count": 11,
+      "avg_rent": 1658817.9090909092,
+      "min_rent": 42315.0,
+      "max_rent": 8035000.0
+    },
+    "Al Hebiah Fourth": {
+      "count": 39,
+      "avg_rent": 67883.33333333333,
+      "min_rent": 20000.0,
+      "max_rent": 320000.0
+    },
+    "Al Yelayiss 1": {
+      "count": 8,
+      "avg_rent": 134500.0,
+      "min_rent": 98000.0,
+      "max_rent": 205000.0
+    },
+    "Al Hebiah First": {
+      "count": 12,
+      "avg_rent": 114151.5,
+      "min_rent": 35000.0,
+      "max_rent": 554520.0
+    },
+    "Al Yelayiss 2": {
+      "count": 21,
+      "avg_rent": 966275.2857142857,
+      "min_rent": 22000.0,
+      "max_rent": 19049250.0
+    },
+    "Al Hudaiba": {
+      "count": 23,
+      "avg_rent": 75293.17391304347,
+      "min_rent": 34000.0,
+      "max_rent": 136500.0
+    },
+    "Nad Al Hamar": {
+      "count": 18,
+      "avg_rent": 219283.11111111112,
+      "min_rent": 28000.0,
+      "max_rent": 2000000.0
+    },
+    "Al Sabkha": {
+      "count": 9,
+      "avg_rent": 233491.33333333334,
+      "min_rent": 32000.0,
+      "max_rent": 1000000.0
+    },
+    "Al Hebiah Sixth": {
+      "count": 6,
+      "avg_rent": 170000.0,
+      "min_rent": 100000.0,
+      "max_rent": 325000.0
+    },
+    "Al Kheeran": {
+      "count": 10,
+      "avg_rent": 142817.2,
+      "min_rent": 35000.0,
+      "max_rent": 282000.0
+    },
+    "Madinat Hind 4": {
+      "count": 16,
+      "avg_rent": 69093.75,
+      "min_rent": 27500.0,
+      "max_rent": 150000.0
+    },
+    "Al Hamriya": {
+      "count": 40,
+      "avg_rent": 59123.15,
+      "min_rent": 15000.0,
+      "max_rent": 319700.0
+    },
+    "Hadaeq Sheikh Mohammed Bin Rashid": {
+      "count": 17,
+      "avg_rent": 307391.70588235295,
+      "min_rent": 59000.0,
+      "max_rent": 2082606.0
+    },
+    "Um Suqaim First": {
+      "count": 9,
+      "avg_rent": 189173.11111111112,
+      "min_rent": 111815.0,
+      "max_rent": 300000.0
+    },
+    "Al Rashidiya": {
+      "count": 10,
+      "avg_rent": 68981.3,
+      "min_rent": 25000.0,
+      "max_rent": 179400.0
+    },
+    "Al Dhagaya": {
+      "count": 24,
+      "avg_rent": 164152.79166666666,
+      "min_rent": 24000.0,
+      "max_rent": 2166667.0
+    },
+    "Al Rowaiyah First": {
+      "count": 5,
+      "avg_rent": 734407.6,
+      "min_rent": 20200.0,
+      "max_rent": 3581953.0
+    },
+    "Al Satwa": {
+      "count": 18,
+      "avg_rent": 74535.77777777778,
+      "min_rent": 37000.0,
+      "max_rent": 205000.0
+    },
+    "Abu Hail": {
+      "count": 15,
+      "avg_rent": 48558.333333333336,
+      "min_rent": 20000.0,
+      "max_rent": 94875.0
+    },
+    "Al Khairan First": {
+      "count": 14,
+      "avg_rent": 109582.42857142857,
+      "min_rent": 60000.0,
+      "max_rent": 235000.0
+    },
+    "Zaabeel Second": {
+      "count": 4,
+      "avg_rent": 2081291.5,
+      "min_rent": 125076.0,
+      "max_rent": 7895090.0
+    },
+    "Al Warsan Third": {
+      "count": 12,
+      "avg_rent": 1784091.1666666667,
+      "min_rent": 13714.0,
+      "max_rent": 3275000.0
+    },
+    "Al Barsha Third": {
+      "count": 6,
+      "avg_rent": 319083.3333333333,
+      "min_rent": 66000.0,
+      "max_rent": 1312500.0
+    },
+    "Al Jafliya": {
+      "count": 8,
+      "avg_rent": 1305958.125,
+      "min_rent": 35335.0,
+      "max_rent": 9700000.0
+    },
+    "Al Mamzer": {
+      "count": 25,
+      "avg_rent": 458938.0,
+      "min_rent": 25000.0,
+      "max_rent": 10000000.0
+    },
+    "Um Hurair First": {
+      "count": 11,
+      "avg_rent": 329163.0909090909,
+      "min_rent": 36000.0,
+      "max_rent": 2798250.0
+    },
+    "Al Twar First": {
+      "count": 6,
+      "avg_rent": 39224.0,
+      "min_rent": 21069.0,
+      "max_rent": 52800.0
+    },
+    "Al Lusaily": {
+      "count": 3,
+      "avg_rent": 69000.0,
+      "min_rent": 35000.0,
+      "max_rent": 100000.0
+    },
+    "Al Barshaa South Second": {
+      "count": 10,
+      "avg_rent": 1852251.5,
+      "min_rent": 33000.0,
+      "max_rent": 15985000.0
+    },
+    "Al Warqa Fourth": {
+      "count": 5,
+      "avg_rent": 124630.0,
+      "min_rent": 93150.0,
+      "max_rent": 150000.0
+    },
+    "Saih Shuaib 1": {
+      "count": 2,
+      "avg_rent": 186353.0,
+      "min_rent": 22000.0,
+      "max_rent": 350706.0
+    },
+    "Jumeirah First": {
+      "count": 17,
+      "avg_rent": 180096.58823529413,
+      "min_rent": 70000.0,
+      "max_rent": 510000.0
+    },
+    "Al Qusais Industrial Fourth": {
+      "count": 7,
+      "avg_rent": 59140.42857142857,
+      "min_rent": 32000.0,
+      "max_rent": 135000.0
+    },
+    "Al Goze Fourth": {
+      "count": 14,
+      "avg_rent": 161215.85714285713,
+      "min_rent": 22000.0,
+      "max_rent": 1479022.0
+    },
+    "Saih Shuaib 3": {
+      "count": 14,
+      "avg_rent": 979095.7142857143,
+      "min_rent": 15000.0,
+      "max_rent": 2545620.0
+    },
+    "Al Safouh First": {
+      "count": 4,
+      "avg_rent": 79376.25,
+      "min_rent": 38571.0,
+      "max_rent": 172120.0
+    },
+    "Nad Al Shiba Third": {
+      "count": 2,
+      "avg_rent": 279277.0,
+      "min_rent": 231000.0,
+      "max_rent": 327554.0
+    },
+    "Al Manara": {
+      "count": 5,
+      "avg_rent": 131605.4,
+      "min_rent": 69714.0,
+      "max_rent": 200000.0
+    },
+    "Saih Shuaib 4": {
+      "count": 6,
+      "avg_rent": 1114395.1666666667,
+      "min_rent": 100000.0,
+      "max_rent": 2582400.0
+    },
+    "Wadi Al Safa 3": {
+      "count": 12,
+      "avg_rent": 193439.41666666666,
+      "min_rent": 41800.0,
+      "max_rent": 1170000.0
+    },
+    "Al Warqa Second": {
+      "count": 3,
+      "avg_rent": 61242.333333333336,
+      "min_rent": 33727.0,
+      "max_rent": 100000.0
+    },
+    "Ras Al Khor Industrial First": {
+      "count": 12,
+      "avg_rent": 107750.0,
+      "min_rent": 15000.0,
+      "max_rent": 600000.0
+    },
+    "Um Suqaim Third": {
+      "count": 8,
+      "avg_rent": 242273.375,
+      "min_rent": 105000.0,
+      "max_rent": 658978.0
+    },
+    "Al Ttay": {
+      "count": 5,
+      "avg_rent": 425480.0,
+      "min_rent": 20000.0,
+      "max_rent": 1144800.0
+    },
+    "Al Mizhar First": {
+      "count": 3,
+      "avg_rent": 230421.33333333334,
+      "min_rent": 106364.0,
+      "max_rent": 392400.0
+    },
+    "Al Barsha Second": {
+      "count": 3,
+      "avg_rent": 248333.33333333334,
+      "min_rent": 90000.0,
+      "max_rent": 330000.0
+    },
+    "Al Khawaneej First": {
+      "count": 2,
+      "avg_rent": 224575.0,
+      "min_rent": 140000.0,
+      "max_rent": 309150.0
+    },
+    "Al Barsha South Fifth": {
+      "count": 15,
+      "avg_rent": 160499.66666666666,
+      "min_rent": 27000.0,
+      "max_rent": 1331391.0
+    },
+    "Hessyan First": {
+      "count": 1,
+      "avg_rent": 0.0,
+      "min_rent": 0.0,
+      "max_rent": 0.0
+    },
+    "Um Suqaim Second": {
+      "count": 5,
+      "avg_rent": 220740.0,
+      "min_rent": 158700.0,
+      "max_rent": 315000.0
+    },
+    "Jumeirah Third": {
+      "count": 11,
+      "avg_rent": 359254.54545454547,
+      "min_rent": 29963.0,
+      "max_rent": 2023604.0
+    },
+    "Hessyan Second": {
+      "count": 7,
+      "avg_rent": 998593.7142857143,
+      "min_rent": 282906.0,
+      "max_rent": 1641600.0
+    },
+    "Um Al Sheif": {
+      "count": 4,
+      "avg_rent": 226406.25,
+      "min_rent": 167625.0,
+      "max_rent": 308000.0
+    },
+    "Al-Cornich": {
+      "count": 5,
+      "avg_rent": 83507.4,
+      "min_rent": 800.0,
+      "max_rent": 185000.0
+    },
+    "Margham": {
+      "count": 1,
+      "avg_rent": 6000.0,
+      "min_rent": 6000.0,
+      "max_rent": 6000.0
+    },
+    "Wadi Al Amardi": {
+      "count": 1,
+      "avg_rent": 180000.0,
+      "min_rent": 180000.0,
+      "max_rent": 180000.0
+    },
+    "Dubai International Airport": {
+      "count": 10,
+      "avg_rent": 235282.5,
+      "min_rent": 10000.0,
+      "max_rent": 719568.0
+    },
+    "Hatta": {
+      "count": 1,
+      "avg_rent": 63250.0,
+      "min_rent": 63250.0,
+      "max_rent": 63250.0
+    },
+    "Al Khawaneej Second": {
+      "count": 2,
+      "avg_rent": 87500.0,
+      "min_rent": 45000.0,
+      "max_rent": 130000.0
+    },
+    "Al Twar Fourth": {
+      "count": 1,
+      "avg_rent": 15000.0,
+      "min_rent": 15000.0,
+      "max_rent": 15000.0
+    },
+    "Bukadra": {
+      "count": 1,
+      "avg_rent": 88000.0,
+      "min_rent": 88000.0,
+      "max_rent": 88000.0
+    },
+    "Madinat Hind 3": {
+      "count": 2,
+      "avg_rent": 4533750.0,
+      "min_rent": 4500000.0,
+      "max_rent": 4567500.0
+    },
+    "Al Rowaiyah Third": {
+      "count": 1,
+      "avg_rent": 85000.0,
+      "min_rent": 85000.0,
+      "max_rent": 85000.0
+    },
+    "Cornich Deira": {
+      "count": 1,
+      "avg_rent": 88510.0,
+      "min_rent": 88510.0,
+      "max_rent": 88510.0
+    },
+    "Al Waheda": {
+      "count": 1,
+      "avg_rent": 105000.0,
+      "min_rent": 105000.0,
+      "max_rent": 105000.0
+    },
+    "Al Barshaa South First": {
+      "count": 2,
+      "avg_rent": 363620.5,
+      "min_rent": 210000.0,
+      "max_rent": 517241.0
+    },
+    "Grayteesah": {
+      "count": 1,
+      "avg_rent": 21000.0,
+      "min_rent": 21000.0,
+      "max_rent": 21000.0
+    },
+    "Al Warsan Second": {
+      "count": 2,
+      "avg_rent": 5075000.0,
+      "min_rent": 150000.0,
+      "max_rent": 10000000.0
+    },
+    "Al Kifaf": {
+      "count": 1,
+      "avg_rent": 140000.0,
+      "min_rent": 140000.0,
+      "max_rent": 140000.0
+    },
+    "Shandagha": {
+      "count": 1,
+      "avg_rent": 30912.0,
+      "min_rent": 30912.0,
+      "max_rent": 30912.0
+    }
+  },
+  "contracts": [
+    {
+      "area": "Saih Shuaib 2",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 31900.0,
+      "annual_amount": 31900.0,
+      "start_date": "2024-12-01",
+      "end_date": "2025-11-30",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Dubai Investment Park First",
+      "property_type": "Labor Camps",
+      "contract_type": "New",
+      "contract_amount": 200000.0,
+      "annual_amount": 20000.0,
+      "start_date": "2016-03-10",
+      "end_date": "2026-03-09",
+      "nearest_metro": "UAE Exchange Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Al Thanyah First",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 75600.0,
+      "annual_amount": 75600.0,
+      "start_date": "2025-03-10",
+      "end_date": "2026-03-09",
+      "nearest_metro": "Dubai Internet City",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Warsan First",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 22000.0,
+      "annual_amount": 22000.0,
+      "start_date": "2021-03-08",
+      "end_date": "2022-03-07",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Muhaisanah Second",
+      "property_type": "Labor Camps",
+      "contract_type": "Renew",
+      "contract_amount": 1965600.0,
+      "annual_amount": 1965600.0,
+      "start_date": "2018-12-01",
+      "end_date": "2019-11-30",
+      "nearest_metro": "Etisalat Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Al Thanyah Fifth",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 90000.0,
+      "annual_amount": 90000.0,
+      "start_date": "2022-10-15",
+      "end_date": "2023-10-14",
+      "nearest_metro": "Jumeirah Lakes Towers",
+      "nearest_mall": "Marina Mall"
+    },
+    {
+      "area": "AL TWAR FIFTH",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 56000.0,
+      "annual_amount": 56000.0,
+      "start_date": "2013-10-16",
+      "end_date": "2014-10-15",
+      "nearest_metro": "Airport Free Zone",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Al Warsan First",
+      "property_type": "Shop",
+      "contract_type": "Renew",
+      "contract_amount": 20000.0,
+      "annual_amount": 10000.0,
+      "start_date": "2015-08-01",
+      "end_date": "2017-07-31",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Trade Center Second",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 200000.0,
+      "annual_amount": 200000.0,
+      "start_date": "2015-01-01",
+      "end_date": "2015-12-31",
+      "nearest_metro": "Buj Khalifa Dubai Mall Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Buteen",
+      "property_type": "Shop",
+      "contract_type": "Renew",
+      "contract_amount": 128000.0,
+      "annual_amount": 102400.0,
+      "start_date": "2020-09-16",
+      "end_date": "2021-12-15",
+      "nearest_metro": "Al Ras Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Barsha First",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 35000.0,
+      "annual_amount": 35000.0,
+      "start_date": "2019-09-01",
+      "end_date": "2020-08-31",
+      "nearest_metro": "Sharaf Dg Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Muteena",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 43000.0,
+      "annual_amount": 43000.0,
+      "start_date": "2015-09-05",
+      "end_date": "2016-09-04",
+      "nearest_metro": "Salah Al Din Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Goze Industrial Fourth",
+      "property_type": "Warehouse",
+      "contract_type": "Renew",
+      "contract_amount": 237500.0,
+      "annual_amount": 237500.0,
+      "start_date": "2021-07-01",
+      "end_date": "2022-06-30",
+      "nearest_metro": "First Abu Dhabi Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Wasl",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 130000.0,
+      "annual_amount": 130000.0,
+      "start_date": "2016-06-01",
+      "end_date": "2017-05-31",
+      "nearest_metro": "Business Bay Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Um Hurair Second",
+      "property_type": "Shop",
+      "contract_type": "Renew",
+      "contract_amount": 378255.0,
+      "annual_amount": 126085.0,
+      "start_date": "2025-01-05",
+      "end_date": "2028-01-04",
+      "nearest_metro": "Healthcare City Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Goze Industrial First",
+      "property_type": "Labor Camps",
+      "contract_type": "New",
+      "contract_amount": 321000.0,
+      "annual_amount": 296308.0,
+      "start_date": "2023-03-10",
+      "end_date": "2024-04-09",
+      "nearest_metro": "First Abu Dhabi Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Goze Third",
+      "property_type": "Labor Camps",
+      "contract_type": "New",
+      "contract_amount": 72000.0,
+      "annual_amount": 72000.0,
+      "start_date": "2025-10-16",
+      "end_date": "2026-10-15",
+      "nearest_metro": "Noor Bank Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Dubai Investment Park First",
+      "property_type": "Villa",
+      "contract_type": "New",
+      "contract_amount": 219000.0,
+      "annual_amount": 219000.0,
+      "start_date": "2015-03-01",
+      "end_date": "2016-02-29",
+      "nearest_metro": "DANUBE Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Al Barsha First",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 85300.0,
+      "annual_amount": 85300.0,
+      "start_date": "2017-08-11",
+      "end_date": "2018-08-10",
+      "nearest_metro": "Sharaf Dg Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Barsha First",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 46000.0,
+      "annual_amount": 46000.0,
+      "start_date": "2025-01-18",
+      "end_date": "2026-01-17",
+      "nearest_metro": "Sharaf Dg Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Merkadh",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 72600.0,
+      "annual_amount": 72600.0,
+      "start_date": "2023-06-15",
+      "end_date": "2024-06-14",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Al Qusais Industrial Third",
+      "property_type": "",
+      "contract_type": "Renew",
+      "contract_amount": 75476.0,
+      "annual_amount": 75476.0,
+      "start_date": "2018-02-01",
+      "end_date": "2019-01-31",
+      "nearest_metro": "Airport Free Zone",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Me'Aisem First",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 25300.0,
+      "annual_amount": 25300.0,
+      "start_date": "2025-12-01",
+      "end_date": "2026-11-30",
+      "nearest_metro": "Damac Properties",
+      "nearest_mall": "Marina Mall"
+    },
+    {
+      "area": "Al Nahda Second",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 40000.0,
+      "annual_amount": 40000.0,
+      "start_date": "2023-03-01",
+      "end_date": "2024-02-29",
+      "nearest_metro": "Al Nahda Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Nadd Hessa",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 34000.0,
+      "annual_amount": 34000.0,
+      "start_date": "2021-10-01",
+      "end_date": "2022-09-30",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Naif",
+      "property_type": "Hotel",
+      "contract_type": "Renew",
+      "contract_amount": 1092500.0,
+      "annual_amount": 1092500.0,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "nearest_metro": "Baniyas Square Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Muhaisanah Fourth",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 35000.0,
+      "annual_amount": 35000.0,
+      "start_date": "2020-07-08",
+      "end_date": "2021-07-07",
+      "nearest_metro": "Etisalat Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Jabal Ali Industrial First",
+      "property_type": "Labor Camps",
+      "contract_type": "Renew",
+      "contract_amount": 175680.0,
+      "annual_amount": 175680.0,
+      "start_date": "2018-11-15",
+      "end_date": "2019-11-14",
+      "nearest_metro": "DANUBE Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Al Warsan First",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 25000.0,
+      "annual_amount": 25000.0,
+      "start_date": "2018-01-01",
+      "end_date": "2018-12-31",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Rega Al Buteen",
+      "property_type": "Office",
+      "contract_type": "Renew",
+      "contract_amount": 155000.0,
+      "annual_amount": 155000.0,
+      "start_date": "2018-07-16",
+      "end_date": "2019-07-15",
+      "nearest_metro": "Al Rigga Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Port Saeed",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 24000.0,
+      "annual_amount": 24000.0,
+      "start_date": "2020-03-11",
+      "end_date": "2021-03-10",
+      "nearest_metro": "Deira City Centre",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Rega",
+      "property_type": "Office",
+      "contract_type": "Renew",
+      "contract_amount": 105000.0,
+      "annual_amount": 105000.0,
+      "start_date": "2025-02-01",
+      "end_date": "2026-01-31",
+      "nearest_metro": "Baniyas Square Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Warsan First",
+      "property_type": "Shop",
+      "contract_type": "Renew",
+      "contract_amount": 35800.0,
+      "annual_amount": 35800.0,
+      "start_date": "2017-11-15",
+      "end_date": "2018-11-14",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Naif",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 25000.0,
+      "annual_amount": 25000.0,
+      "start_date": "2023-06-01",
+      "end_date": "2024-05-31",
+      "nearest_metro": "Baniyas Square Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Jabal Ali Industrial First",
+      "property_type": "Labor Camps",
+      "contract_type": "New",
+      "contract_amount": 2967529.0,
+      "annual_amount": 3956706.0,
+      "start_date": "2020-03-15",
+      "end_date": "2020-12-14",
+      "nearest_metro": "DANUBE Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Trade Center First",
+      "property_type": "Office",
+      "contract_type": "Renew",
+      "contract_amount": 10000.0,
+      "annual_amount": 10000.0,
+      "start_date": "2024-12-22",
+      "end_date": "2025-12-21",
+      "nearest_metro": "Financial Centre",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Madinat Al Mataar",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 45000.0,
+      "annual_amount": 45000.0,
+      "start_date": "2024-01-20",
+      "end_date": "2025-01-19",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Al Rega",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 75000.0,
+      "annual_amount": 75000.0,
+      "start_date": "2017-02-10",
+      "end_date": "2018-02-09",
+      "nearest_metro": "Union Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Dubai Investment Park First",
+      "property_type": "Shop",
+      "contract_type": "New",
+      "contract_amount": 140000.0,
+      "annual_amount": 120000.0,
+      "start_date": "2016-01-01",
+      "end_date": "2017-02-28",
+      "nearest_metro": "UAE Exchange Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Jabal Ali Industrial First",
+      "property_type": "Labor Camps",
+      "contract_type": "Renew",
+      "contract_amount": 129600.0,
+      "annual_amount": 129600.0,
+      "start_date": "2025-02-19",
+      "end_date": "2026-02-18",
+      "nearest_metro": "DANUBE Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Al Goze Industrial Second",
+      "property_type": "Labor Camps",
+      "contract_type": "New",
+      "contract_amount": 360000.0,
+      "annual_amount": 360000.0,
+      "start_date": "2025-03-01",
+      "end_date": "2026-02-28",
+      "nearest_metro": "Noor Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Warsan Fourth",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 37000.0,
+      "annual_amount": 37000.0,
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Al Murqabat",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 100000.0,
+      "annual_amount": 100000.0,
+      "start_date": "2017-10-12",
+      "end_date": "2018-10-11",
+      "nearest_metro": "Al Rigga Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Wadi Al Safa 6",
+      "property_type": "Villa",
+      "contract_type": "New",
+      "contract_amount": 250000.0,
+      "annual_amount": 250000.0,
+      "start_date": "2014-10-20",
+      "end_date": "2015-10-19",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Al Goze Industrial Fourth",
+      "property_type": "Labor Camps",
+      "contract_type": "Renew",
+      "contract_amount": 139200.0,
+      "annual_amount": 139200.0,
+      "start_date": "2016-03-03",
+      "end_date": "2017-03-02",
+      "nearest_metro": "First Abu Dhabi Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Mararr",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 25000.0,
+      "annual_amount": 25000.0,
+      "start_date": "2025-01-01",
+      "end_date": "2025-12-31",
+      "nearest_metro": "Salah Al Din Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Baraha",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 23000.0,
+      "annual_amount": 23000.0,
+      "start_date": "2013-05-01",
+      "end_date": "2014-04-30",
+      "nearest_metro": "Salah Al Din Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Oud Metha",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 110000.0,
+      "annual_amount": 110000.0,
+      "start_date": "2021-01-10",
+      "end_date": "2022-01-09",
+      "nearest_metro": "Healthcare City Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Dubai Investment Park First",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 10000.0,
+      "annual_amount": 10000.0,
+      "start_date": "2024-08-15",
+      "end_date": "2025-08-14",
+      "nearest_metro": "DANUBE Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Al Goze First",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 140000.0,
+      "annual_amount": 140000.0,
+      "start_date": "2019-01-01",
+      "end_date": "2019-12-31",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Trade Center First",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 248040.0,
+      "annual_amount": 248040.0,
+      "start_date": "2013-06-20",
+      "end_date": "2014-06-19",
+      "nearest_metro": "Trade Centre Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Murqabat",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 15000.0,
+      "annual_amount": 15000.0,
+      "start_date": "2025-02-13",
+      "end_date": "2026-02-12",
+      "nearest_metro": "Al Rigga Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Oud Metha",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 48000.0,
+      "annual_amount": 48000.0,
+      "start_date": "2021-02-20",
+      "end_date": "2022-03-19",
+      "nearest_metro": "Oud Metha Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "AL TWAR FIFTH",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 48000.0,
+      "annual_amount": 48000.0,
+      "start_date": "2026-02-01",
+      "end_date": "2027-01-31",
+      "nearest_metro": "Airport Free Zone",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "AL QUSAIS",
+      "property_type": "Shop",
+      "contract_type": "New",
+      "contract_amount": 800000.0,
+      "annual_amount": 800000.0,
+      "start_date": "2023-10-10",
+      "end_date": "2024-10-09",
+      "nearest_metro": "Airport Free Zone",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Nadd Hessa",
+      "property_type": "Shop",
+      "contract_type": "New",
+      "contract_amount": 151428.0,
+      "annual_amount": 151428.0,
+      "start_date": "2024-07-01",
+      "end_date": "2025-09-30",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Mankhool",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 21500.0,
+      "annual_amount": 21500.0,
+      "start_date": "2025-07-08",
+      "end_date": "2026-07-07",
+      "nearest_metro": "Burjuman Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Mirdif",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 76835.0,
+      "annual_amount": 76835.0,
+      "start_date": "2015-08-01",
+      "end_date": "2016-07-31",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Al Thanyah Fifth",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 130000.0,
+      "annual_amount": 130000.0,
+      "start_date": "2014-09-15",
+      "end_date": "2015-09-14",
+      "nearest_metro": "Jumeirah Lakes Towers",
+      "nearest_mall": "Marina Mall"
+    },
+    {
+      "area": "Al Barsha South Fourth",
+      "property_type": "Villa",
+      "contract_type": "Renew",
+      "contract_amount": 120000.0,
+      "annual_amount": 120000.0,
+      "start_date": "2022-07-23",
+      "end_date": "2023-07-22",
+      "nearest_metro": "Dubai Internet City",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Thanyah First",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 90000.0,
+      "annual_amount": 90000.0,
+      "start_date": "2023-11-01",
+      "end_date": "2024-10-31",
+      "nearest_metro": "Dubai Internet City",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Barsha First",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 82000.0,
+      "annual_amount": 82236.0,
+      "start_date": "2023-03-01",
+      "end_date": "2024-02-28",
+      "nearest_metro": "First Abu Dhabi Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Goze Industrial Fourth",
+      "property_type": "Warehouse",
+      "contract_type": "Renew",
+      "contract_amount": 120000.0,
+      "annual_amount": 120000.0,
+      "start_date": "2022-04-01",
+      "end_date": "2023-03-31",
+      "nearest_metro": "First Abu Dhabi Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Marsa Dubai",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 400000.0,
+      "annual_amount": 400000.0,
+      "start_date": "2022-04-18",
+      "end_date": "2023-04-17",
+      "nearest_metro": "Jumeirah Beach Residency",
+      "nearest_mall": "Marina Mall"
+    },
+    {
+      "area": "Business Bay",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 10000.0,
+      "annual_amount": 10000.0,
+      "start_date": "2022-11-17",
+      "end_date": "2023-11-16",
+      "nearest_metro": "Buj Khalifa Dubai Mall Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Murqabat",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 44500.0,
+      "annual_amount": 44500.0,
+      "start_date": "2012-01-01",
+      "end_date": "2012-12-31",
+      "nearest_metro": "Salah Al Din Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Hor Al Anz East",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 55000.0,
+      "annual_amount": 55000.0,
+      "start_date": "2019-01-01",
+      "end_date": "2019-12-31",
+      "nearest_metro": "Abu Hail Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Hor Al Anz",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 57000.0,
+      "annual_amount": 57000.0,
+      "start_date": "2018-10-07",
+      "end_date": "2019-10-31",
+      "nearest_metro": "Abu Hail Metro Station",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Nadd Hessa",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 36000.0,
+      "annual_amount": 36000.0,
+      "start_date": "2020-11-10",
+      "end_date": "2021-12-09",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Al Qusais Industrial First",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 50000.0,
+      "annual_amount": 50000.0,
+      "start_date": "2012-06-25",
+      "end_date": "2013-06-24",
+      "nearest_metro": "Airport Free Zone",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Al Saffa Second",
+      "property_type": "Villa",
+      "contract_type": "New",
+      "contract_amount": 375000.0,
+      "annual_amount": 375000.0,
+      "start_date": "2015-12-25",
+      "end_date": "2016-12-24",
+      "nearest_metro": "Noor Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Thanyah First",
+      "property_type": "",
+      "contract_type": "New",
+      "contract_amount": 70000.0,
+      "annual_amount": 70000.0,
+      "start_date": "2013-10-21",
+      "end_date": "2014-10-20",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Al Karama",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 70000.0,
+      "annual_amount": 70000.0,
+      "start_date": "2019-08-14",
+      "end_date": "2020-08-13",
+      "nearest_metro": "ADCB Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Hebiah Fifth",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 80000.0,
+      "annual_amount": 80000.0,
+      "start_date": "2017-04-25",
+      "end_date": "2018-04-24",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Ras Al Khor Industrial Third",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 46305.0,
+      "annual_amount": 46305.0,
+      "start_date": "2018-02-04",
+      "end_date": "2019-02-03",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Mirdif",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 59000.0,
+      "annual_amount": 59000.0,
+      "start_date": "2022-08-12",
+      "end_date": "2023-08-11",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Al Qusais Industrial Second",
+      "property_type": "Shop",
+      "contract_type": "Renew",
+      "contract_amount": 50000.0,
+      "annual_amount": 50000.0,
+      "start_date": "2020-08-01",
+      "end_date": "2021-07-31",
+      "nearest_metro": "Airport Free Zone",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Jabal Ali Industrial First",
+      "property_type": "Labor Camps",
+      "contract_type": "New",
+      "contract_amount": 800000.0,
+      "annual_amount": 640000.0,
+      "start_date": "2024-01-10",
+      "end_date": "2025-04-09",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Rega Al Buteen",
+      "property_type": "Office",
+      "contract_type": "Renew",
+      "contract_amount": 96000.0,
+      "annual_amount": 96000.0,
+      "start_date": "2014-10-01",
+      "end_date": "2015-09-30",
+      "nearest_metro": "Al Rigga Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Dubai Investment Park Second",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 21000.0,
+      "annual_amount": 21000.0,
+      "start_date": "2020-11-25",
+      "end_date": "2021-11-24",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Dubai Investment Park First",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 53605.0,
+      "annual_amount": 42884.0,
+      "start_date": "2016-06-01",
+      "end_date": "2017-08-31",
+      "nearest_metro": "DANUBE Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Nadd Hessa",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 35000.0,
+      "annual_amount": 35000.0,
+      "start_date": "2017-05-20",
+      "end_date": "2018-05-19",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Jabal Ali Industrial First",
+      "property_type": "Labor Camps",
+      "contract_type": "New",
+      "contract_amount": 1516320.0,
+      "annual_amount": 1524791.0,
+      "start_date": "2018-12-17",
+      "end_date": "2019-12-14",
+      "nearest_metro": "DANUBE Metro Station",
+      "nearest_mall": "Ibn-e-Battuta Mall"
+    },
+    {
+      "area": "Oud Metha",
+      "property_type": "Office",
+      "contract_type": "Renew",
+      "contract_amount": 37400.0,
+      "annual_amount": 37400.0,
+      "start_date": "2015-03-01",
+      "end_date": "2016-02-29",
+      "nearest_metro": "Oud Metha Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Goze Industrial Fourth",
+      "property_type": "Warehouse",
+      "contract_type": "New",
+      "contract_amount": 150000.0,
+      "annual_amount": 143445.0,
+      "start_date": "2024-05-15",
+      "end_date": "2025-05-31",
+      "nearest_metro": "First Abu Dhabi Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Muhaisanah Fourth",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 56000.0,
+      "annual_amount": 56000.0,
+      "start_date": "2012-08-15",
+      "end_date": "2013-08-14",
+      "nearest_metro": "Al Qusais Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Ras Al Khor Industrial Third",
+      "property_type": "Shop",
+      "contract_type": "Renew",
+      "contract_amount": 194840.0,
+      "annual_amount": 97420.0,
+      "start_date": "2020-01-01",
+      "end_date": "2021-12-31",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Dubai Investment Park Second",
+      "property_type": "Warehouse",
+      "contract_type": "Renew",
+      "contract_amount": 2800000.0,
+      "annual_amount": 2800000.0,
+      "start_date": "2024-08-25",
+      "end_date": "2025-08-24",
+      "nearest_metro": "DANUBE Metro Station",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Mankhool",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 70000.0,
+      "annual_amount": 70000.0,
+      "start_date": "2019-10-01",
+      "end_date": "2020-09-30",
+      "nearest_metro": "Al Fahidi Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Goze Industrial Second",
+      "property_type": "Flat",
+      "contract_type": "Renew",
+      "contract_amount": 37967.0,
+      "annual_amount": 37967.0,
+      "start_date": "2024-02-24",
+      "end_date": "2025-02-23",
+      "nearest_metro": "Noor Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Thanyah Fifth",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 105000.0,
+      "annual_amount": 105000.0,
+      "start_date": "2020-04-09",
+      "end_date": "2021-04-08",
+      "nearest_metro": "Damac Properties",
+      "nearest_mall": "Marina Mall"
+    },
+    {
+      "area": "Warsan Fourth",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 45000.0,
+      "annual_amount": 45000.0,
+      "start_date": "2024-06-13",
+      "end_date": "2025-06-12",
+      "nearest_metro": "Rashidiya Metro Station",
+      "nearest_mall": "City Centre Mirdif"
+    },
+    {
+      "area": "Al Goze Industrial Fourth",
+      "property_type": "Labor Camps",
+      "contract_type": "New",
+      "contract_amount": 1176600.0,
+      "annual_amount": 1176600.0,
+      "start_date": "2023-09-20",
+      "end_date": "2024-09-19",
+      "nearest_metro": "First Abu Dhabi Bank Metro Station",
+      "nearest_mall": "Mall of the Emirates"
+    },
+    {
+      "area": "Al Rega",
+      "property_type": "Studio",
+      "contract_type": "New",
+      "contract_amount": 9063.0,
+      "annual_amount": 29000.0,
+      "start_date": "2021-11-08",
+      "end_date": "2022-02-28",
+      "nearest_metro": "Union Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Hamriya Port",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 40700.0,
+      "annual_amount": 40700.0,
+      "start_date": "2024-10-01",
+      "end_date": "2025-09-30",
+      "nearest_metro": "Abu Hail Metro Station",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Saih Shuaib 2",
+      "property_type": "Labor Camps",
+      "contract_type": "Renew",
+      "contract_amount": 2547907.0,
+      "annual_amount": 2547907.0,
+      "start_date": "2018-03-27",
+      "end_date": "2019-03-26",
+      "nearest_metro": "",
+      "nearest_mall": ""
+    },
+    {
+      "area": "Mankhool",
+      "property_type": "Flat",
+      "contract_type": "New",
+      "contract_amount": 113000.0,
+      "annual_amount": 113000.0,
+      "start_date": "2017-04-10",
+      "end_date": "2018-04-09",
+      "nearest_metro": "Al Fahidi Metro Station",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Thanyah Fifth",
+      "property_type": "Villa",
+      "contract_type": "New",
+      "contract_amount": 177000.0,
+      "annual_amount": 177000.0,
+      "start_date": "2019-04-26",
+      "end_date": "2020-04-25",
+      "nearest_metro": "Damac Properties",
+      "nearest_mall": "Marina Mall"
+    },
+    {
+      "area": "Port Saeed",
+      "property_type": "Office",
+      "contract_type": "New",
+      "contract_amount": 85000.0,
+      "annual_amount": 85000.0,
+      "start_date": "2024-01-20",
+      "end_date": "2025-01-19",
+      "nearest_metro": "Deira City Centre",
+      "nearest_mall": "Dubai Mall"
+    },
+    {
+      "area": "Al Suq Al Kabeer",
+      "property_type": "Shop",
+      "contract_type": "New",
+      "contract_amount": 40000.0,
+      "annual_amount": 40000.0,
+      "start_date": "2022-07-15",
+      "end_date": "2023-08-14",
+      "nearest_metro": "Al Fahidi Metro Station",
+      "nearest_mall": "Dubai Mall"
+    }
+  ]
+}

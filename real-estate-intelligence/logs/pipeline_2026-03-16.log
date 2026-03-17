@@ -1,0 +1,244 @@
+2026-03-16 19:01:52,229 - INFO - === Pipeline Started: 2026-03-16T19:01:52.229498 ===
+2026-03-16 19:01:52,229 - INFO - Running scrapers...
+2026-03-16 19:01:52,229 - INFO - Loading government data...
+2026-03-16 19:01:52,231 - INFO - Validating 0 records...
+2026-03-16 19:01:52,231 - INFO - Deduplicating records...
+2026-03-16 19:01:52,236 - INFO - === Pipeline Completed: 2026-03-16T19:01:52.236657 ===
+2026-03-16 19:01:52,236 - INFO - Duration: 0.0s
+2026-03-16 19:01:52,236 - INFO - Records: 0, Duplicates: 0, Errors: 0
+2026-03-16 19:11:57,762 - INFO - === Pipeline Started: 2026-03-16T19:11:57.762944 ===
+2026-03-16 19:11:57,768 - INFO - Running scrapers...
+2026-03-16 19:11:57,768 - INFO - Running scraper_propertyfinder.py...
+2026-03-16 19:53:10,097 - INFO - === Pipeline Started: 2026-03-16T19:53:10.097724 ===
+2026-03-16 19:53:10,104 - INFO - Running scrapers...
+2026-03-16 19:53:10,104 - INFO - Running scraper_propertyfinder.py...
+2026-03-16 19:53:32,218 - INFO - ✓ scraper_propertyfinder.py completed
+2026-03-16 19:53:32,219 - INFO - Running scraper_bayut.py...
+2026-03-16 19:53:32,382 - WARNING - ⚠ scraper_bayut.py failed: Traceback (most recent call last):
+  File "/Users/macbookairm3/.openclaw/workspace/real-estate-intelligence/scrapers/scraper_bayut.py", line 11, in <module>
+    from playwright_stealth.stealth import 
+2026-03-16 19:53:32,382 - INFO - Total scraped: 0 records
+2026-03-16 19:53:32,382 - INFO - Loading government data...
+2026-03-16 19:53:32,383 - INFO - Validating 0 records...
+2026-03-16 19:53:32,383 - INFO - Deduplicating records...
+2026-03-16 19:53:32,386 - INFO - === Pipeline Completed: 2026-03-16T19:53:32.386717 ===
+2026-03-16 19:53:32,386 - INFO - Duration: 22.3s
+2026-03-16 19:53:32,386 - INFO - Records: 0, Duplicates: 0, Errors: 0
+2026-03-16 19:55:48,126 - INFO - === Pipeline Started: 2026-03-16T19:55:48.126073 ===
+2026-03-16 19:55:48,132 - INFO - Running scrapers...
+2026-03-16 19:55:48,132 - INFO - Running scraper_propertyfinder.py...
+2026-03-16 19:56:11,456 - INFO - ✓ scraper_propertyfinder.py completed
+2026-03-16 19:56:11,457 - INFO - Running scraper_bayut.py...
+2026-03-16 19:56:13,573 - INFO - ✓ scraper_bayut.py completed
+2026-03-16 19:56:13,574 - INFO - Total scraped: 0 records
+2026-03-16 19:56:13,574 - INFO - Loading government data...
+2026-03-16 19:56:13,577 - INFO - Validating 0 records...
+2026-03-16 19:56:13,577 - INFO - Deduplicating records...
+2026-03-16 19:56:13,582 - INFO - === Pipeline Completed: 2026-03-16T19:56:13.582702 ===
+2026-03-16 19:56:13,582 - INFO - Duration: 25.5s
+2026-03-16 19:56:13,582 - INFO - Records: 0, Duplicates: 0, Errors: 0
+2026-03-16 20:53:28,275 - INFO - === Pipeline Started: 2026-03-16T20:53:28.275472 ===
+2026-03-16 20:53:28,278 - INFO - Running scrapers...
+2026-03-16 20:53:28,278 - INFO - Running scraper_propertyfinder.py...
+2026-03-16 20:53:28,403 - WARNING - ⚠ scraper_propertyfinder.py failed: Traceback (most recent call last):
+  File "/Users/macbookairm3/.openclaw/workspace/real-estate-intelligence/scrapers/scraper_propertyfinder.py", line 11, in <module>
+    from bs4 import BeautifulSoup
+
+2026-03-16 20:53:28,403 - INFO - Running scraper_bayut.py...
+2026-03-16 20:53:28,507 - WARNING - ⚠ scraper_bayut.py failed: Traceback (most recent call last):
+  File "/Users/macbookairm3/.openclaw/workspace/real-estate-intelligence/scrapers/scraper_bayut.py", line 10, in <module>
+    from bs4 import BeautifulSoup
+ModuleNot
+2026-03-16 20:53:28,507 - INFO - Total scraped: 0 records
+2026-03-16 20:53:28,507 - INFO - Loading government data...
+2026-03-16 20:53:28,509 - INFO - Validating 0 records...
+2026-03-16 20:53:28,509 - INFO - Deduplicating records...
+2026-03-16 20:53:28,512 - INFO - === Pipeline Completed: 2026-03-16T20:53:28.512434 ===
+2026-03-16 20:53:28,512 - INFO - Duration: 0.2s
+2026-03-16 20:53:28,512 - INFO - Records: 0, Duplicates: 0, Errors: 0
+2026-03-16 20:58:27,802 [INFO] pipeline: ============================================================
+2026-03-16 20:58:27,802 [INFO] pipeline:   Pipeline START — 2026-W11
+2026-03-16 20:58:27,802 [INFO] pipeline: ============================================================
+2026-03-16 20:58:27,802 [INFO] pipeline: 
+[Step] Running propertyfinder scraper...
+2026-03-16 20:58:27,802 [INFO] scrapers.base_scraper: [propertyfinder] Starting scrape for 5 areas
+2026-03-16 20:58:29,083 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=1
+2026-03-16 20:58:38,596 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=2
+2026-03-16 20:58:46,904 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=3
+2026-03-16 20:58:56,011 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=4
+2026-03-16 20:59:03,858 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=5
+2026-03-16 20:59:10,236 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=6
+2026-03-16 20:59:16,021 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=7
+2026-03-16 20:59:24,112 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=8
+2026-03-16 20:59:31,578 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=9
+2026-03-16 20:59:37,982 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=10
+2026-03-16 20:59:44,622 [INFO] scrapers.base_scraper: [propertyfinder] Dubai Marina: 203/203 valid listings
+2026-03-16 20:59:45,662 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=1
+2026-03-16 20:59:54,722 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=2
+2026-03-16 21:00:02,758 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=3
+2026-03-16 21:00:10,593 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=4
+2026-03-16 21:00:18,841 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=5
+2026-03-16 21:00:26,150 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=6
+2026-03-16 21:00:32,443 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=7
+2026-03-16 21:00:39,596 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=8
+2026-03-16 21:00:46,096 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=9
+2026-03-16 21:00:52,493 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=10
+2026-03-16 21:01:00,604 [INFO] scrapers.base_scraper: [propertyfinder] Downtown Dubai: 203/203 valid listings
+2026-03-16 21:01:01,476 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=1
+2026-03-16 21:01:10,897 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=2
+2026-03-16 21:01:18,170 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=3
+2026-03-16 21:01:24,829 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=4
+2026-03-16 21:01:32,112 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=5
+2026-03-16 21:01:38,297 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=6
+2026-03-16 21:01:45,492 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=7
+2026-03-16 21:01:52,765 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=8
+2026-03-16 21:02:00,567 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=9
+2026-03-16 21:02:09,130 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=10
+2026-03-16 21:02:16,731 [INFO] scrapers.base_scraper: [propertyfinder] Palm Jumeirah: 203/203 valid listings
+2026-03-16 21:02:17,596 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=1
+2026-03-16 21:02:28,057 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=2
+2026-03-16 21:02:36,947 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=3
+2026-03-16 21:02:44,970 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=4
+2026-03-16 21:02:52,089 [INFO] pipeline: ============================================================
+2026-03-16 21:02:52,090 [INFO] pipeline:   Pipeline START — 2026-W11
+2026-03-16 21:02:52,090 [INFO] pipeline: ============================================================
+2026-03-16 21:02:52,090 [INFO] pipeline: 
+[Step] Running propertyfinder scraper...
+2026-03-16 21:02:52,090 [INFO] scrapers.base_scraper: [propertyfinder] Starting scrape for 5 areas
+2026-03-16 21:02:52,113 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=5
+2026-03-16 21:02:53,220 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=1
+2026-03-16 21:02:58,042 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=6
+2026-03-16 21:03:01,014 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=2
+2026-03-16 21:03:06,047 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=7
+2026-03-16 21:03:08,255 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=3
+2026-03-16 21:03:12,114 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=8
+2026-03-16 21:03:15,555 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=4
+2026-03-16 21:03:20,407 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=9
+2026-03-16 21:03:22,979 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=5
+2026-03-16 21:03:26,969 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=10
+2026-03-16 21:03:30,178 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=6
+2026-03-16 21:03:33,126 [INFO] scrapers.base_scraper: [propertyfinder] Business Bay: 203/203 valid listings
+2026-03-16 21:03:33,910 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=1
+2026-03-16 21:03:35,927 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=7
+2026-03-16 21:03:43,476 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=8
+2026-03-16 21:03:43,553 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=2
+2026-03-16 21:03:50,882 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=9
+2026-03-16 21:03:51,378 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=3
+2026-03-16 21:03:59,345 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Dubai Marina page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=dubai-marina&page=10
+2026-03-16 21:04:01,253 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=4
+2026-03-16 21:04:06,292 [INFO] scrapers.base_scraper: [propertyfinder] Dubai Marina: 203/203 valid listings
+2026-03-16 21:04:06,714 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=1
+2026-03-16 21:04:08,816 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=5
+2026-03-16 21:04:14,702 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=2
+2026-03-16 21:04:16,662 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=6
+2026-03-16 21:04:22,437 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=7
+2026-03-16 21:04:24,302 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=3
+2026-03-16 21:04:29,279 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=8
+2026-03-16 21:04:33,896 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=4
+2026-03-16 21:04:34,847 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=9
+2026-03-16 21:04:41,421 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=5
+2026-03-16 21:04:42,391 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=10
+2026-03-16 21:04:48,695 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=6
+2026-03-16 21:04:48,853 [INFO] scrapers.base_scraper: [propertyfinder] Jumeirah Beach Residence: 203/203 valid listings
+2026-03-16 21:04:48,872 [INFO] scrapers.base_scraper: [propertyfinder] Saved 1015 listings → /Users/macbookairm3/.openclaw/workspace/real-estate-intelligence/data/raw/propertyfinder_2026-03-16.json
+2026-03-16 21:04:48,872 [INFO] pipeline: [Step] propertyfinder: ✓ 1015 listings
+2026-03-16 21:04:48,872 [INFO] pipeline: 
+[Step] Running bayut scraper...
+2026-03-16 21:04:48,873 [INFO] scrapers.base_scraper: [bayut] Starting scrape for 5 areas
+2026-03-16 21:04:49,368 [INFO] scrapers.scraper_bayut: [Bayut] Scraping Dubai Marina page 1
+2026-03-16 21:04:53,680 [INFO] scrapers.scraper_bayut: [Bayut] No cards on page 1 for Dubai Marina
+2026-03-16 21:04:53,718 [INFO] scrapers.base_scraper: [bayut] Dubai Marina: 0/0 valid listings
+2026-03-16 21:04:54,081 [INFO] scrapers.scraper_bayut: [Bayut] Scraping Downtown Dubai page 1
+2026-03-16 21:04:54,180 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=7
+2026-03-16 21:04:57,776 [INFO] scrapers.scraper_bayut: [Bayut] No cards on page 1 for Downtown Dubai
+2026-03-16 21:04:57,816 [INFO] scrapers.base_scraper: [bayut] Downtown Dubai: 0/0 valid listings
+2026-03-16 21:04:58,186 [INFO] scrapers.scraper_bayut: [Bayut] Scraping Palm Jumeirah page 1
+2026-03-16 21:05:01,852 [INFO] scrapers.scraper_bayut: [Bayut] No cards on page 1 for Palm Jumeirah
+2026-03-16 21:05:01,891 [INFO] scrapers.base_scraper: [bayut] Palm Jumeirah: 0/0 valid listings
+2026-03-16 21:05:02,081 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=8
+2026-03-16 21:05:02,207 [INFO] scrapers.scraper_bayut: [Bayut] Scraping Business Bay page 1
+2026-03-16 21:05:05,868 [INFO] scrapers.scraper_bayut: [Bayut] No cards on page 1 for Business Bay
+2026-03-16 21:05:05,907 [INFO] scrapers.base_scraper: [bayut] Business Bay: 0/0 valid listings
+2026-03-16 21:05:06,272 [INFO] scrapers.scraper_bayut: [Bayut] Scraping Jumeirah Beach Residence page 1
+2026-03-16 21:05:09,263 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=9
+2026-03-16 21:05:09,783 [INFO] scrapers.scraper_bayut: [Bayut] No cards on page 1 for Jumeirah Beach Residence
+2026-03-16 21:05:09,866 [INFO] scrapers.base_scraper: [bayut] Jumeirah Beach Residence: 0/0 valid listings
+2026-03-16 21:05:09,934 [INFO] scrapers.base_scraper: [bayut] Saved 0 listings → /Users/macbookairm3/.openclaw/workspace/real-estate-intelligence/data/raw/bayut_2026-03-16.json
+2026-03-16 21:05:09,934 [INFO] pipeline: [Step] bayut: ✓ 0 listings
+2026-03-16 21:05:09,934 [INFO] pipeline: 
+[Step] Running dubizzle scraper...
+2026-03-16 21:05:09,939 [INFO] scrapers.base_scraper: [dubizzle] Starting scrape for 5 areas
+2026-03-16 21:05:10,521 [INFO] scrapers.scraper_dubizzle: [Dubizzle] Scraping Dubai Marina page 1
+2026-03-16 21:05:15,747 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Downtown Dubai page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=downtown-dubai&page=10
+2026-03-16 21:05:18,239 [INFO] scrapers.scraper_dubizzle: [Dubizzle] No cards on page 1 for Dubai Marina
+2026-03-16 21:05:18,303 [INFO] scrapers.base_scraper: [dubizzle] Dubai Marina: 0/0 valid listings
+2026-03-16 21:05:18,676 [INFO] scrapers.scraper_dubizzle: [Dubizzle] Scraping Downtown Dubai page 1
+2026-03-16 21:05:22,785 [INFO] scrapers.base_scraper: [propertyfinder] Downtown Dubai: 203/203 valid listings
+2026-03-16 21:05:23,044 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=1
+2026-03-16 21:05:26,214 [INFO] scrapers.scraper_dubizzle: [Dubizzle] No cards on page 1 for Downtown Dubai
+2026-03-16 21:05:26,238 [INFO] scrapers.base_scraper: [dubizzle] Downtown Dubai: 0/0 valid listings
+2026-03-16 21:05:26,589 [INFO] scrapers.scraper_dubizzle: [Dubizzle] Scraping Palm Jumeirah page 1
+2026-03-16 21:05:31,449 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=2
+2026-03-16 21:05:34,309 [INFO] scrapers.scraper_dubizzle: [Dubizzle] No cards on page 1 for Palm Jumeirah
+2026-03-16 21:05:34,337 [INFO] scrapers.base_scraper: [dubizzle] Palm Jumeirah: 0/0 valid listings
+2026-03-16 21:05:34,630 [INFO] scrapers.scraper_dubizzle: [Dubizzle] Scraping Business Bay page 1
+2026-03-16 21:05:38,126 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=3
+2026-03-16 21:05:43,084 [INFO] scrapers.scraper_dubizzle: [Dubizzle] No cards on page 1 for Business Bay
+2026-03-16 21:05:43,115 [INFO] scrapers.base_scraper: [dubizzle] Business Bay: 0/0 valid listings
+2026-03-16 21:05:43,389 [INFO] scrapers.scraper_dubizzle: [Dubizzle] Scraping Jumeirah Beach Residence page 1
+2026-03-16 21:05:43,485 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=4
+2026-03-16 21:05:50,202 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=5
+2026-03-16 21:05:51,149 [INFO] scrapers.scraper_dubizzle: [Dubizzle] No cards on page 1 for Jumeirah Beach Residence
+2026-03-16 21:05:51,203 [INFO] scrapers.base_scraper: [dubizzle] Jumeirah Beach Residence: 0/0 valid listings
+2026-03-16 21:05:51,204 [INFO] scrapers.base_scraper: [dubizzle] Saved 0 listings → /Users/macbookairm3/.openclaw/workspace/real-estate-intelligence/data/raw/dubizzle_2026-03-16.json
+2026-03-16 21:05:51,204 [INFO] pipeline: [Step] dubizzle: ✓ 0 listings
+2026-03-16 21:05:51,204 [INFO] pipeline: 
+[Step] Loading government data...
+2026-03-16 21:05:51,205 [INFO] datasets.data_dubai_loader: [GOV] Starting government data fetch
+2026-03-16 21:05:51,205 [INFO] datasets.data_dubai_loader: [GOV] Tier 1: Trying data.dubai portal...
+2026-03-16 21:05:51,337 [WARNING] datasets.data_dubai_loader: [GOV] Tier 1 endpoint failed (https://data.dubai.gov.ae/api/3/action/datastore_search?resource_id=real-estate-transactions&limit=1000): HTTPSConnectionPool(host='data.dubai.gov.ae', port=443): Max retries exceeded with url: /api/3/action/datastore_search?resource_id=real-estate-transactions&limit=1000 (Caused by NameResolutionError("HTTPSConnection(host='data.dubai.gov.ae', port=443): Failed to resolve 'data.dubai.gov.ae' ([Errno 8] nodename nor servname provided, or not known)"))
+2026-03-16 21:05:51,339 [WARNING] datasets.data_dubai_loader: [GOV] Tier 1 endpoint failed (https://data.dubai.gov.ae/dataset/real-estate-transactions): HTTPSConnectionPool(host='data.dubai.gov.ae', port=443): Max retries exceeded with url: /dataset/real-estate-transactions (Caused by NameResolutionError("HTTPSConnection(host='data.dubai.gov.ae', port=443): Failed to resolve 'data.dubai.gov.ae' ([Errno 8] nodename nor servname provided, or not known)"))
+2026-03-16 21:05:51,339 [WARNING] datasets.data_dubai_loader: [GOV] pdfplumber not installed — skipping Tier 2
+2026-03-16 21:05:51,339 [INFO] datasets.data_dubai_loader: [GOV] Tier 3: Trying Dubai Statistics Center...
+2026-03-16 21:05:51,785 [WARNING] datasets.data_dubai_loader: [GOV] All government data sources unavailable this week.
+2026-03-16 21:05:51,786 [INFO] pipeline: [Step] Gov data: no_data (tier 4)
+2026-03-16 21:05:51,786 [INFO] pipeline: 
+[Step] Validating listings...
+2026-03-16 21:05:51,790 [INFO] pipeline: [Step] Validation: 1015 valid, 0 rejected
+2026-03-16 21:05:51,790 [INFO] pipeline: 
+[Step] Deduplicating...
+2026-03-16 21:05:51,791 [INFO] pipeline: [Step] After dedup: 203 unique listings
+2026-03-16 21:05:51,791 [INFO] pipeline: 
+[Step] Saving merged dataset...
+2026-03-16 21:05:51,793 [INFO] pipeline: [Step] Saved 203 listings → /Users/macbookairm3/.openclaw/workspace/real-estate-intelligence/data/processed/weekly_2026-W11.json
+2026-03-16 21:05:51,793 [INFO] pipeline: 
+[Step] Generating market summary...
+2026-03-16 21:05:51,793 [WARNING] analysis.market_summary: [Summary] No listings found for Downtown Dubai
+2026-03-16 21:05:51,793 [WARNING] analysis.market_summary: [Summary] No listings found for Palm Jumeirah
+2026-03-16 21:05:51,793 [WARNING] analysis.market_summary: [Summary] No listings found for Business Bay
+2026-03-16 21:05:51,793 [WARNING] analysis.market_summary: [Summary] No listings found for Jumeirah Beach Residence
+2026-03-16 21:05:51,795 [INFO] analysis.market_summary: [Summary] Saved → /Users/macbookairm3/.openclaw/workspace/real-estate-intelligence/data/processed/summary_2026-W11.json
+2026-03-16 21:05:51,795 [INFO] pipeline: 
+============================================================
+2026-03-16 21:05:51,795 [INFO] pipeline:   Pipeline SUCCESS — 444.0s
+2026-03-16 21:05:51,795 [INFO] pipeline:   Listings: 203 | Rejected: 0
+2026-03-16 21:05:51,795 [INFO] pipeline: ============================================================
+
+2026-03-16 21:05:57,463 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=6
+2026-03-16 21:06:03,162 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=7
+2026-03-16 21:06:08,401 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=8
+2026-03-16 21:06:18,630 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=9
+2026-03-16 21:06:25,171 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Palm Jumeirah page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=palm-jumeirah&page=10
+2026-03-16 21:06:32,216 [INFO] scrapers.base_scraper: [propertyfinder] Palm Jumeirah: 203/203 valid listings
+2026-03-16 21:06:32,643 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=1
+2026-03-16 21:06:40,184 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 2: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=2
+2026-03-16 21:06:48,132 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 3: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=3
+2026-03-16 21:06:56,046 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 4: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=4
+2026-03-16 21:07:03,325 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 5: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=5
+2026-03-16 21:07:10,840 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 6: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=6
+2026-03-16 21:07:18,036 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 7: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=7
+2026-03-16 21:07:25,341 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 8: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=8
+2026-03-16 21:07:33,076 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 9: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=9
+2026-03-16 21:07:38,903 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Business Bay page 10: https://www.propertyfinder.ae/en/search?c=1&l=1&q=business-bay&page=10
+2026-03-16 21:07:47,643 [INFO] scrapers.base_scraper: [propertyfinder] Business Bay: 203/203 valid listings
+2026-03-16 21:07:48,068 [INFO] scrapers.scraper_propertyfinder: [PF] Scraping Jumeirah Beach Residence page 1: https://www.propertyfinder.ae/en/search?c=1&l=1&q=jumeirah-beach-residence&page=1
