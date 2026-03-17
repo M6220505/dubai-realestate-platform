@@ -1,6 +1,34 @@
+<<<<<<< HEAD
 # requirements.txt
 playwright>=1.42.0
 requests>=2.31.0
 pandas>=2.2.0
 pdfplumber>=0.10.0
 python-dotenv>=1.0.0
+=======
+# Core HTTP + parsing
+requests>=2.31.0
+urllib3>=2.0.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Playwright (optional — only needed for JS-heavy pages)
+# Install browser binaries separately: playwright install chromium
+playwright>=1.42.0
+
+# Data processing
+pandas>=2.0.0
+
+# Scheduling (optional local scheduler)
+schedule>=1.2.0
+
+# Dashboard
+streamlit>=1.35.0
+plotly>=5.20.0
+
+# Testing
+pytest>=7.4.0
+
+# Type checking / dev
+# mypy>=1.8.0
+>>>>>>> fc0932babea4050510c0efdd24e21c142329beec
