@@ -71,6 +71,26 @@ with st.sidebar:
 st.markdown("# 🏙️ Dubai Real Estate Intelligence")
 mf = dld.get("market_facts_2024", {})
 st.caption(f"Source: Dubai Land Department · {len(tx):,} transactions · {datetime.now().strftime('%d %b %Y')}")
+
+# Page descriptions
+page_descriptions = {
+    "📊 Overview": ("Market Overview", "A full snapshot of Dubai's real estate market — transaction volumes, average prices per sqft, total value by area, and capital concentration heatmap. Every number sourced from DLD official records."),
+    "🧠 AI Intelligence": ("AI Market Intelligence", "Three exclusive tools: **Price Estimator** calculates fair market value based on real DLD transactions. **Area Comparator** scores two areas head-to-head across 7 metrics. **ROI Calculator** projects capital gains + rental income over your holding period."),
+    "🔍 Price Gap": ("Price Gap Detector", "Identifies which areas are trading above or below the Dubai average price per sqft. Green = undervalued opportunity. Red = premium zone. Based on actual sale prices, not listing prices."),
+    "📈 Trends": ("Market Trends", "DLD 2024 annual data: property type breakdown, global investor origins by continent, transaction volume growth year-by-year, and off-plan vs ready market split."),
+    "🏆 Rankings": ("Investment Rankings", "Investment score for every area combining liquidity (transaction volume) and value (price vs average). Includes a scatter chart mapping price vs volume to identify the best risk-adjusted opportunities."),
+}
+
+if page in page_descriptions:
+    title, desc = page_descriptions[page]
+    st.markdown(f"""<div style='background:#111418;border:1px solid rgba(201,168,76,0.15);
+    border-radius:10px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:flex-start;gap:14px'>
+    <div style='flex:1'>
+    <div style='font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:#C9A84C;margin-bottom:4px'>{title}</div>
+    <div style='font-size:13px;color:#8A8070;line-height:1.6'>{desc}</div>
+    </div></div>""", unsafe_allow_html=True)
+
 st.divider()
 
 areas_f = areas_df[
