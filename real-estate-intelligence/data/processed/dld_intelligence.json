@@ -158,5 +158,128 @@
     },
     "latest_year": 2024,
     "latest_value": 1044969400181
+  },
+  "source": "DLD Annual Report 2024 — Official",
+  "market_facts_2024": {
+    "total_transaction_value_aed_b": 760.99,
+    "total_transaction_volume": 226000,
+    "yoy_growth_value_pct": 20.4,
+    "yoy_growth_volume_pct": 36,
+    "total_investors": 158000,
+    "total_investors_yoy_pct": 41,
+    "active_investors": 50000,
+    "new_investors": 108000,
+    "investment_value_aed_b": 522,
+    "rental_contracts": 965000,
+    "rental_contracts_yoy_pct": 15
+  },
+  "price_performance_2024": {
+    "units_avg_price_per_sqm": 19488,
+    "villas_avg_price_per_sqm": 14617,
+    "units_growth_since_2020_pct": 32,
+    "villas_growth_since_2014_pct": 38.1,
+    "luxury_units_avg_psm": 39760,
+    "luxury_villas_avg_psm": 25936
+  },
+  "transaction_type_2024": {
+    "sales_value_aed_b": 522.4,
+    "sales_yoy_pct": 27.35,
+    "mortgage_value_aed_b": 187.3,
+    "gifts_value_aed_b": 51.3,
+    "gifts_yoy_pct": 58.95
+  },
+  "property_type_2024": {
+    "units_value_aed_b": 318.18,
+    "units_yoy_pct": 37.21,
+    "land_value_aed_b": 234.56,
+    "land_yoy_pct": -7.32,
+    "villa_value_aed_b": 126.32,
+    "villa_yoy_pct": 34.72,
+    "building_value_aed_b": 81.94,
+    "building_yoy_pct": 53.45
+  },
+  "category_2024": {
+    "existing_properties_aed_b": 295.82,
+    "existing_yoy_pct": 35.35,
+    "offplan_aed_b": 230.61,
+    "offplan_yoy_pct": 43.7,
+    "land_aed_b": 234.56,
+    "land_yoy_pct": -7.32
+  },
+  "investor_geography_2024": {
+    "asia_aed_b": 301.9,
+    "asia_pct": 58,
+    "europe_aed_b": 133.1,
+    "europe_pct": 25.5,
+    "north_america_aed_b": 41.0,
+    "north_america_pct": 7.9,
+    "africa_aed_b": 34.6,
+    "africa_pct": 6.6,
+    "oceania_aed_b": 8.2,
+    "oceania_pct": 2
+  },
+  "rental_market_2024": {
+    "total_contracts": 965067,
+    "new_contracts": 466180,
+    "renewal_contracts": 489887,
+    "new_contracts_yoy_pct": 19.7,
+    "res_villa_rental_aed_per_sqft": 44.6,
+    "res_villa_rental_yoy_pct": 19.6,
+    "comm_unit_rental_aed_per_sqft": 170.4,
+    "comm_unit_rental_yoy_pct": 8.7,
+    "top_rental_community": "Business Bay",
+    "top_rental_value_aed_b": 3.54,
+    "top_rental_yoy_pct": 23.44
+  },
+  "luxury_market_2024": {
+    "units_highest_psm_community": "Island 2",
+    "units_highest_psm": 113550,
+    "villas_highest_psm_community": "Island 2",
+    "villas_highest_psm": 71411,
+    "marsa_dubai_luxury_total_aed_b": 16.2,
+    "business_bay_luxury_count": 2864,
+    "palm_jumeirah_luxury_villas_aed_b": 5.4,
+    "us10m_plus_sales_2024": 435
+  },
+  "area_rankings_top10_by_investment": [
+    {
+      "name": "Marsa Dubai",
+      "value_2024_aed_b": 40,
+      "rank": 1
+    },
+    {
+      "name": "Business Bay",
+      "value_2024_aed_b": 29,
+      "rank": 2
+    },
+    {
+      "name": "Hadaeq Sheikh MBR",
+      "value_2024_aed_b": 26,
+      "rank": 3
+    },
+    {
+      "name": "Palm Jumeirah",
+      "value_2024_aed_b": 22,
+      "rank": 4
+    },
+    {
+      "name": "Burj Khalifa",
+      "value_2024_aed_b": 20,
+      "rank": 5
+    }
+  ],
+  "investor_profitability": {
+    "offplan_total_profit_aed_b": 5.85,
+    "existing_total_profit_aed_b": 33.54,
+    "villas_profit_pct_of_existing": 74,
+    "units_profit_pct_of_existing": 26,
+    "most_profitable_entry_year": 2022
+  },
+  "outlook_2025": {
+    "population_target_2040_m": 5.8,
+    "rental_yield_range_pct": "6-8",
+    "offplan_growth_momentum": "strong",
+    "luxury_supply_constraint": true,
+    "dubai_transparency_rank_jll": 28
   }
 }
