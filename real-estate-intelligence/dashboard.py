@@ -1,5 +1,5 @@
 import streamlit as st
-import json, glob, pandas as pd
+import json, pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
@@ -10,29 +10,30 @@ st.markdown("""<style>
 .stApp{background:#0A0C0F}
 .block-container{padding-top:1.5rem;max-width:1400px}
 [data-testid="stMetricValue"]{font-size:26px;color:#C9A84C}
+.insight-box{background:#111418;border:1px solid rgba(201,168,76,0.2);border-left:3px solid #C9A84C;
+             border-radius:8px;padding:16px;margin-top:8px}
+.insight-box h4{color:#C9A84C;font-size:13px;font-weight:700;letter-spacing:.08em;
+                text-transform:uppercase;margin-bottom:10px}
+.insight-box p{color:#8A8070;font-size:13px;line-height:1.7;margin:0}
+.insight-box strong{color:#E8E6E0}
 </style>""", unsafe_allow_html=True)
 
 ROOT = Path(__file__).resolve().parent
 
-AREA_MAP = {
-    'Marsa Dubai':'Dubai Marina','Business Bay':'Business Bay',
-    'Palm Jumeirah':'Palm Jumeirah','Al Merkadh':'Downtown Dubai',
-    'Burj Khalifa':'Downtown Dubai','Downtown Dubai':'Downtown Dubai',
-    'Jumeirah Beach Residence':'Jumeirah Beach Residence',
-}
-
 @st.cache_data(ttl=300)
 def load_transactions():
     f = ROOT/"data/raw/Transactions_2026-03-18.csv"
-    if not f.exists():
-        return pd.DataFrame()
+    if not f.exists(): return pd.DataFrame()
     df = pd.read_csv(f)
-    df['our_area'] = df['area_name_en'].map(AREA_MAP)
-    df = df[df['our_area'].notna()].copy()
     df['meter_sale_price'] = pd.to_numeric(df['meter_sale_price'], errors='coerce')
     df['actual_worth']     = pd.to_numeric(df['actual_worth'],     errors='coerce')
-    df['procedure_area']   = pd.to_numeric(df['procedure_area'],   errors='coerce')
     return df[df['trans_group_en']=='Sales'].copy()
+
+@st.cache_data(ttl=300)
+def load_areas():
+    p = ROOT/"data/processed/all_areas_metrics.json"
+    if not p.exists(): return pd.DataFrame()
+    return pd.DataFrame(json.load(open(p)))
 
 @st.cache_data(ttl=300)
 def load_dld():
@@ -51,288 +52,351 @@ def load_brokers():
     if not f.exists(): return pd.DataFrame()
     return pd.read_csv(f)
 
-@st.cache_data(ttl=300)
-def load_housing():
-    f = ROOT/"data/raw/Housing_Units_2026-03-18.csv"
-    if not f.exists(): return pd.DataFrame()
-    return pd.read_csv(f)
+def insight(title, text):
+    st.markdown(f"""<div class="insight-box">
+    <h4>💡 {title}</h4><p>{text}</p></div>""", unsafe_allow_html=True)
 
-tx  = load_transactions()
-dld = load_dld()
-mv  = load_movements()
-br  = load_brokers()
-hu  = load_housing()
+tx       = load_transactions()
+areas_df = load_areas()
+dld      = load_dld()
+mv       = load_movements()
+br       = load_brokers()
 
-TARGET = ['Dubai Marina','Downtown Dubai','Palm Jumeirah','Business Bay','Jumeirah Beach Residence']
-
-def area_stats(df):
-    rows = []
-    for area in TARGET:
-        a = df[df['our_area']==area]
-        psf   = a['meter_sale_price'].dropna()
-        worth = a['actual_worth'].dropna()
-        rows.append({
-            'area':         area,
-            'sales':        len(a),
-            'avg_psf':      round(psf.mean()) if len(psf)>0 else 0,
-            'median_psf':   round(psf.median()) if len(psf)>0 else 0,
-            'avg_value':    round(worth.mean()) if len(worth)>0 else 0,
-            'median_value': round(worth.median()) if len(worth)>0 else 0,
-        })
-    return pd.DataFrame(rows)
-
-def inv_score(row):
-    dld_data = dld.get('rental_yields',{}).get(row['area'],{})
-    yield_pct = dld_data.get('estimated_yield_pct', 5.0) if dld_data else 5.0
-    growth    = 17.05
-    liq       = min(10, row['sales'] / 30)
-    return round(yield_pct*0.40 + growth/3*0.35 + liq*0.25, 1)
-
-stats = area_stats(tx)
-if not stats.empty:
-    stats['inv_score'] = stats.apply(inv_score, axis=1)
-    stats['gap_vs_avg'] = ((stats['avg_psf'].mean() - stats['avg_psf']) / stats['avg_psf'].mean() * 100).round(1)
-
-# SIDEBAR
 with st.sidebar:
     st.markdown("## 🏙️ DubaiIntel")
     st.success(f"✅ {len(tx):,} DLD transactions")
-    st.caption("Source: Dubai Land Department")
-    st.markdown("---")
-    page = st.radio("", ["📊 Market Overview","🔍 Price Gap","🏆 Investment Ranking","📈 Trends","🤝 Brokers","📋 Transactions"])
-    st.markdown("---")
-    sel = st.multiselect("Areas", TARGET, default=TARGET)
-
-tx_f = tx[tx['our_area'].isin(sel)]
-stats_f = stats[stats['area'].isin(sel)] if not stats.empty else stats
+    st.caption(f"📅 {datetime.now().strftime('%d %b %Y')}")
+    st.divider()
+    page = st.radio("", ["📊 Overview","🔍 Price Gap","🏆 Rankings","📈 Trends","🤝 Brokers","📋 Transactions"])
+    st.divider()
+    all_areas = sorted(areas_df['area_name_en'].tolist()) if not areas_df.empty else []
+    top10     = areas_df.head(10)['area_name_en'].tolist() if not areas_df.empty else []
+    sel       = st.multiselect("Filter Areas", all_areas, default=top10)
+    min_sales = st.slider("Min transactions", 5, 50, 10)
 
 st.markdown("# 🏙️ Dubai Real Estate Intelligence")
-st.caption(f"{len(tx_f):,} DLD transactions · Source: Dubai Land Department · {datetime.now().strftime('%d %b %Y')}")
+mf = dld.get("market_facts_2024", {})
+st.caption(f"Source: Dubai Land Department · {len(tx):,} transactions · {datetime.now().strftime('%d %b %Y')}")
 st.divider()
 
-# PAGE: OVERVIEW
-if page == "📊 Market Overview":
-    total_val = tx_f['actual_worth'].sum()
-    avg_psf   = tx_f['meter_sale_price'].mean()
-    avg_val   = tx_f['actual_worth'].mean()
+areas_f = areas_df[
+    (areas_df['area_name_en'].isin(sel)) &
+    (areas_df['sales'] >= min_sales)
+].copy() if not areas_df.empty else pd.DataFrame()
 
+tx_f = tx[tx['area_name_en'].isin(sel)] if not tx.empty else pd.DataFrame()
+
+# ── OVERVIEW ──────────────────────────────────────────────
+if page == "📊 Overview":
     c1,c2,c3,c4,c5 = st.columns(5)
-    c1.metric("Transactions",   f"{len(tx_f):,}")
-    c2.metric("Total Value",    f"AED {total_val/1e9:.1f}B")
-    c3.metric("Avg Price",      f"AED {avg_val/1e6:.1f}M")
-    c4.metric("Avg AED/sqft",   f"{avg_psf:,.0f}")
-    c5.metric("Growth YoY",     "+17.05%", delta="DLD Index")
+    c1.metric("Transactions 2024",  f"{mf.get('total_transaction_volume',226000):,}")
+    c2.metric("Total Value",        f"AED {mf.get('total_transaction_value_aed_b',761):.0f}B")
+    c3.metric("YoY Growth",         f"+{mf.get('yoy_growth_value_pct',20.4)}%")
+    c4.metric("Total Investors",    f"{mf.get('total_investors',158000):,}")
+    c5.metric("Rental Contracts",   f"{mf.get('rental_contracts',965000):,}")
 
-    st.info("📊 Data source: Dubai Land Department (DLD) — real transaction records, not listings")
-    col_a, col_b = st.columns(2)
+    if not areas_f.empty:
+        # Chart 1 — PSF
+        col_chart, col_insight = st.columns([3,1])
+        with col_chart:
+            st.subheader(f"Avg AED/sqft — {len(areas_f)} Areas")
+            top_area  = areas_f.loc[areas_f['avg_psf'].idxmax(), 'area_name_en']
+            top_psf   = areas_f['avg_psf'].max()
+            low_area  = areas_f.loc[areas_f['avg_psf'].idxmin(), 'area_name_en']
+            low_psf   = areas_f['avg_psf'].min()
+            dubai_avg = areas_f['avg_psf'].mean()
+            fig = px.bar(areas_f.sort_values('avg_psf'), x='avg_psf', y='area_name_en',
+                         orientation='h', text='avg_psf', color='avg_psf',
+                         color_continuous_scale=['#1a3a2a','#C9A84C'],
+                         height=max(380, len(areas_f)*28))
+            fig.update_traces(texttemplate='AED %{text:,.0f}', textposition='outside')
+            fig.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
+                              font_color='#E8E6E0', coloraxis_showscale=False,
+                              margin=dict(l=0,r=100,t=10,b=10), yaxis_title="")
+            st.plotly_chart(fig, use_container_width=True)
+        with col_insight:
+            st.markdown("<br><br>", unsafe_allow_html=True)
+            insight("Price/sqft Analysis",
+                f"<strong>{top_area}</strong> commands the highest price at "
+                f"<strong>AED {top_psf:,.0f}/sqft</strong> — "
+                f"{((top_psf-dubai_avg)/dubai_avg*100):.0f}% above the selected area average.<br><br>"
+                f"<strong>{low_area}</strong> offers the lowest entry point at "
+                f"<strong>AED {low_psf:,.0f}/sqft</strong>, representing "
+                f"potential value for yield-focused investors.<br><br>"
+                f"Dubai avg (selected): <strong>AED {dubai_avg:,.0f}/sqft</strong>.")
 
-    with col_a:
-        st.subheader("Avg Sale Price/sqft by Area")
-        fig = px.bar(
-            stats_f.sort_values('avg_psf'),
-            x='avg_psf', y='area', orientation='h',
-            text='avg_psf', color='avg_psf',
-            color_continuous_scale=['#1a3a2a','#22c55e']
-        )
-        fig.update_traces(texttemplate='AED %{text:,.0f}', textposition='outside')
-        fig.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
-                          font_color='#E8E6E0', height=300,
-                          coloraxis_showscale=False, margin=dict(l=0,r=90,t=10,b=10))
-        st.plotly_chart(fig, use_container_width=True)
+        # Chart 2 — Volume
+        col_chart2, col_insight2 = st.columns([3,1])
+        with col_chart2:
+            st.subheader("Transaction Volume by Area")
+            top_vol  = areas_f.loc[areas_f['sales'].idxmax(), 'area_name_en']
+            top_cnt  = int(areas_f['sales'].max())
+            avg_vol  = areas_f['sales'].mean()
+            fig2 = px.bar(areas_f.sort_values('sales',ascending=False),
+                          x='area_name_en', y='sales', text='sales', color='sales',
+                          color_continuous_scale=['#1a2a3a','#22c55e'], height=350)
+            fig2.update_traces(texttemplate='%{text}', textposition='outside')
+            fig2.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
+                               font_color='#E8E6E0', coloraxis_showscale=False,
+                               xaxis_tickangle=-45, xaxis_title="",
+                               margin=dict(l=0,r=0,t=10,b=60))
+            st.plotly_chart(fig2, use_container_width=True)
+        with col_insight2:
+            st.markdown("<br><br>", unsafe_allow_html=True)
+            insight("Liquidity Signal",
+                f"<strong>{top_vol}</strong> leads with <strong>{top_cnt} transactions</strong> "
+                f"— {(top_cnt/avg_vol):.1f}× the average area volume.<br><br>"
+                f"High transaction count = high market liquidity = easier to buy and exit.<br><br>"
+                f"Areas below <strong>{int(avg_vol)} sales</strong> carry higher liquidity risk.")
 
-    with col_b:
-        st.subheader("Median Sale Value by Area")
-        fig2 = px.bar(
-            stats_f.sort_values('median_value'),
-            x='median_value', y='area', orientation='h',
-            text='median_value', color='median_value',
-            color_continuous_scale=['#1a2a3a','#C9A84C']
-        )
-        fig2.update_traces(texttemplate='AED %{text:,.0f}', textposition='outside')
-        fig2.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
-                           font_color='#E8E6E0', height=300,
-                           coloraxis_showscale=False, margin=dict(l=0,r=110,t=10,b=10))
-        st.plotly_chart(fig2, use_container_width=True)
+        # Chart 3 — Treemap
+        col_chart3, col_insight3 = st.columns([3,1])
+        with col_chart3:
+            st.subheader("Total Value Concentration (AED)")
+            top_val   = areas_f.loc[areas_f['total_value'].idxmax(), 'area_name_en']
+            top_val_m = areas_f['total_value'].max()/1e6
+            top3      = areas_f.nlargest(3,'total_value')['area_name_en'].tolist()
+            total_all = areas_f['total_value'].sum()/1e9
+            top3_pct  = areas_f.nlargest(3,'total_value')['total_value'].sum()/areas_f['total_value'].sum()*100
+            fig3 = px.treemap(areas_f, path=['area_name_en'], values='total_value',
+                              color='avg_psf', color_continuous_scale=['#1a3a2a','#C9A84C'],
+                              hover_data={'sales':True,'avg_psf':':.0f'})
+            fig3.update_layout(paper_bgcolor='#0A0C0F', font_color='#E8E6E0',
+                               margin=dict(l=0,r=0,t=10,b=10), height=400)
+            st.plotly_chart(fig3, use_container_width=True)
+        with col_insight3:
+            st.markdown("<br><br>", unsafe_allow_html=True)
+            insight("Capital Concentration",
+                f"<strong>{top_val}</strong> accounts for the largest share at "
+                f"<strong>AED {top_val_m:,.0f}M</strong>.<br><br>"
+                f"Top 3 areas (<strong>{', '.join(top3)}</strong>) represent "
+                f"<strong>{top3_pct:.0f}%</strong> of total selected area value "
+                f"(AED {total_all:.1f}B).<br><br>"
+                f"High concentration = institutional-grade demand in prime zones.")
 
-    st.subheader("Transaction Volume by Area")
-    fig3 = px.bar(
-        stats_f.sort_values('sales', ascending=False),
-        x='area', y='sales', color='sales',
-        text='sales', color_continuous_scale=['#1a2a3a','#C9A84C']
-    )
-    fig3.update_traces(texttemplate='%{text}', textposition='outside')
-    fig3.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
-                       font_color='#E8E6E0', height=280,
-                       coloraxis_showscale=False, margin=dict(l=0,r=0,t=10,b=10))
-    st.plotly_chart(fig3, use_container_width=True)
-
-# PAGE: PRICE GAP
+# ── PRICE GAP ─────────────────────────────────────────────
 elif page == "🔍 Price Gap":
-    st.subheader("Price Gap — Which Areas Are Undervalued?")
-    st.caption("Based on actual DLD transaction prices vs Dubai average")
+    if not areas_f.empty:
+        dubai_avg   = areas_f['avg_psf'].mean()
+        undervalued = areas_f[areas_f['gap_vs_avg_pct'] < -10].sort_values('gap_vs_avg_pct')
+        overvalued  = areas_f[areas_f['gap_vs_avg_pct'] > 10]
+        fair        = areas_f[areas_f['gap_vs_avg_pct'].between(-10,10)]
 
-    if not stats_f.empty:
-        dubai_avg = stats_f['avg_psf'].mean()
-        st.info(f"Dubai average (target areas): AED {dubai_avg:,.0f}/sqft")
+        col_chart, col_insight = st.columns([3,1])
+        with col_chart:
+            st.subheader("Price Gap vs Dubai Average")
+            fig = go.Figure()
+            for _, row in areas_f.sort_values('gap_vs_avg_pct').iterrows():
+                g = row['gap_vs_avg_pct']
+                c = '#22c55e' if g < -10 else '#ef4444' if g > 10 else '#C9A84C'
+                fig.add_trace(go.Bar(x=[row['area_name_en']], y=[g],
+                                     marker_color=c, text=[f"{g:+.0f}%"],
+                                     textposition='outside', showlegend=False,
+                                     name=row['area_name_en']))
+            fig.add_hline(y=0, line_dash='dash', line_color='#555')
+            fig.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
+                              font_color='#E8E6E0', height=450,
+                              xaxis_tickangle=-45, xaxis_title="",
+                              yaxis_title="% vs Dubai Avg",
+                              margin=dict(l=0,r=0,t=10,b=80))
+            st.plotly_chart(fig, use_container_width=True)
+        with col_insight:
+            st.markdown("<br><br>", unsafe_allow_html=True)
+            uv_list = ', '.join(undervalued['area_name_en'].tolist()[:3]) if len(undervalued)>0 else "None"
+            ov_list = ', '.join(overvalued['area_name_en'].tolist()[:3]) if len(overvalued)>0 else "None"
+            insight("Price Gap Reading",
+                f"<strong style='color:#22c55e'>{len(undervalued)} Undervalued</strong> areas "
+                f"trading 10%+ below average:<br><strong>{uv_list}</strong><br><br>"
+                f"<strong style='color:#ef4444'>{len(overvalued)} Overvalued</strong> areas "
+                f"trading 10%+ above average:<br><strong>{ov_list}</strong><br><br>"
+                f"<strong style='color:#C9A84C'>{len(fair)} Fair Value</strong> areas "
+                f"within ±10% of the AED {dubai_avg:,.0f}/sqft average.")
 
-        fig = go.Figure()
-        for _, row in stats_f.iterrows():
-            gap = row['avg_psf'] - dubai_avg
-            color = '#22c55e' if gap < 0 else '#ef4444'
-            fig.add_trace(go.Bar(
-                x=[row['area']], y=[gap],
-                marker_color=color,
-                text=[f"AED {gap:+,.0f}"],
-                textposition='outside',
-                name=row['area'],
-                showlegend=False,
-            ))
-        fig.add_hline(y=0, line_dash='dash', line_color='#555')
-        fig.update_layout(
-            paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
-            font_color='#E8E6E0', height=380,
-            title=f"Price gap vs Dubai avg (AED {dubai_avg:,.0f}/sqft)",
-            margin=dict(l=0,r=0,t=40,b=10)
-        )
-        st.plotly_chart(fig, use_container_width=True)
+        st.subheader("Detailed Breakdown")
+        display = areas_f[['area_name_en','avg_psf','sales','gap_vs_avg_pct','inv_score']].copy()
+        display['signal'] = display['gap_vs_avg_pct'].apply(
+            lambda x: '🟢 Undervalued' if x < -10 else ('🔴 Overvalued' if x > 10 else '🟡 Fair'))
+        display['avg_psf'] = display['avg_psf'].apply(lambda x: f"AED {x:,.0f}")
+        display.columns = ['Area','Avg AED/sqft','Sales','Gap %','Score','Signal']
+        st.dataframe(display.sort_values('Gap %').reset_index(drop=True),
+                     use_container_width=True, hide_index=True, height=450)
 
-        st.subheader("Area Details")
-        display = stats_f[['area','avg_psf','median_psf','avg_value','sales']].copy()
-        display['vs_avg'] = ((display['avg_psf'] - dubai_avg) / dubai_avg * 100).round(1)
-        display['signal'] = display['vs_avg'].apply(
-            lambda x: '🟢 Undervalued' if x < -5 else ('🔴 Overvalued' if x > 5 else '🟡 Fair'))
-        display.columns = ['Area','Avg AED/sqft','Median AED/sqft','Avg Value AED','Sales','vs Avg %','Signal']
-        for col in ['Avg AED/sqft','Median AED/sqft','Avg Value AED']:
-            display[col] = display[col].apply(lambda x: f"{x:,.0f}")
-        st.dataframe(display.reset_index(drop=True), use_container_width=True, hide_index=True)
+# ── RANKINGS ──────────────────────────────────────────────
+elif page == "🏆 Rankings":
+    if not areas_f.empty:
+        ranked = areas_f.sort_values('inv_score', ascending=False)
 
-# PAGE: INVESTMENT RANKING
-elif page == "🏆 Investment Ranking":
-    st.subheader("Investment Score per Area")
-    st.caption("Score = Yield 40% + Growth 35% + Liquidity 25% · Based on DLD data")
+        col_chart, col_insight = st.columns([3,1])
+        with col_chart:
+            st.subheader("Investment Score — All Selected Areas")
+            fig = px.bar(ranked.head(15), x='inv_score', y='area_name_en',
+                         orientation='h', text='inv_score', color='inv_score',
+                         color_continuous_scale=['#1a2a3a','#22c55e'],
+                         height=max(400, min(15,len(ranked))*32))
+            fig.update_traces(texttemplate='%{text:.1f}', textposition='outside')
+            fig.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
+                              font_color='#E8E6E0', coloraxis_showscale=False,
+                              yaxis={'categoryorder':'total ascending'},
+                              margin=dict(l=0,r=60,t=10,b=10), yaxis_title="")
+            st.plotly_chart(fig, use_container_width=True)
+        with col_insight:
+            st.markdown("<br><br>", unsafe_allow_html=True)
+            top1  = ranked.iloc[0]['area_name_en']
+            top1s = ranked.iloc[0]['inv_score']
+            top2  = ranked.iloc[1]['area_name_en'] if len(ranked)>1 else ""
+            bot1  = ranked.iloc[-1]['area_name_en']
+            bot1s = ranked.iloc[-1]['inv_score']
+            insight("Ranking Logic",
+                f"Score = Liquidity ×0.4 + Value ×0.6<br><br>"
+                f"🥇 <strong>{top1}</strong> scores <strong>{top1s:.1f}</strong> — "
+                f"combining strong transaction volume with competitive pricing.<br><br>"
+                f"🥈 <strong>{top2}</strong> follows closely.<br><br>"
+                f"⚠️ <strong>{bot1}</strong> scores <strong>{bot1s:.1f}</strong> — "
+                f"lower liquidity or premium pricing limits the score.")
 
-    if not stats_f.empty:
-        ranked = stats_f.sort_values('inv_score', ascending=False)
-        cols = st.columns(len(ranked))
-        for col, (_, row) in zip(cols, ranked.iterrows()):
-            sc = row['inv_score']
-            color = '#22c55e' if sc>=8 else '#C9A84C' if sc>=6 else '#ef4444'
-            stars = '⭐⭐⭐⭐' if sc>=8 else '⭐⭐⭐' if sc>=6 else '⭐⭐'
-            col.markdown(f"""
-            <div style='background:#111418;border:1px solid {color}44;border-top:3px solid {color};
-                        border-radius:0 0 12px 12px;padding:16px;text-align:center'>
-              <div style='font-size:11px;color:#8A8070'>{row['area']}</div>
-              <div style='font-size:36px;font-weight:700;color:{color}'>{sc}</div>
-              <div style='font-size:18px'>{stars}</div>
-              <div style='font-size:11px;color:#8A8070;margin-top:6px'>
-                {row['sales']} sales<br>
-                AED {row['avg_psf']:,}/sqft<br>
-                Avg AED {row['avg_value']/1e6:.1f}M
-              </div>
-            </div>""", unsafe_allow_html=True)
+        col_chart2, col_insight2 = st.columns([3,1])
+        with col_chart2:
+            st.subheader("PSF vs Liquidity — Bubble = Total Value")
+            fig2 = px.scatter(areas_f, x='sales', y='avg_psf',
+                              size='total_value', color='gap_vs_avg_pct',
+                              hover_name='area_name_en', text='area_name_en',
+                              color_continuous_scale=['#22c55e','#C9A84C','#ef4444'],
+                              height=450)
+            fig2.update_traces(textposition='top center', textfont_size=9)
+            fig2.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
+                               font_color='#E8E6E0', margin=dict(l=0,r=0,t=10,b=10),
+                               xaxis_title="Transactions (Liquidity)",
+                               yaxis_title="Avg AED/sqft (Price)")
+            st.plotly_chart(fig2, use_container_width=True)
+        with col_insight2:
+            st.markdown("<br><br>", unsafe_allow_html=True)
+            insight("Quadrant Reading",
+                f"<strong>Top-right</strong>: High price + High volume = Prime liquid markets (institutional quality).<br><br>"
+                f"<strong>Bottom-right</strong>: Low price + High volume = High-yield, affordable entry.<br><br>"
+                f"<strong>Top-left</strong>: High price + Low volume = Luxury / illiquid.<br><br>"
+                f"<strong>Bottom-left</strong>: Low price + Low volume = Emerging / speculative.")
 
-        st.markdown("---")
-        categories = ["Liquidity","Value","Growth"]
-        fig = go.Figure()
-        colors = ['#22c55e','#C9A84C','#3b82f6','#ef4444','#a855f7']
-        max_sales = ranked['sales'].max()
-        dubai_avg = ranked['avg_psf'].mean()
-        for i, (_, row) in enumerate(ranked.iterrows()):
-            liq_s    = row['sales'] / max(max_sales, 1) * 100
-            val_s    = max(0, min(100, (1 - row['avg_psf']/max(dubai_avg,1)) * 50 + 50))
-            growth_s = 57
-            fig.add_trace(go.Scatterpolar(
-                r=[liq_s, val_s, growth_s],
-                theta=categories, fill='toself', name=row['area'],
-                line_color=colors[i%len(colors)],
-                fillcolor=colors[i%len(colors)], opacity=0.3
-            ))
-        fig.update_layout(
-            polar=dict(bgcolor='#111418',
-                       radialaxis=dict(visible=True, range=[0,100], gridcolor='#333'),
-                       angularaxis=dict(gridcolor='#333', color='#E8E6E0')),
-            paper_bgcolor='#0A0C0F', font_color='#E8E6E0',
-            height=380, margin=dict(l=40,r=40,t=20,b=20),
-            legend=dict(bgcolor='#111418')
-        )
-        st.plotly_chart(fig, use_container_width=True)
-
-# PAGE: TRENDS
+# ── TRENDS ────────────────────────────────────────────────
 elif page == "📈 Trends":
-    st.subheader("Transaction Volume Trends")
+    mf2024 = dld.get("market_facts_2024", {})
+    pt     = dld.get("property_type_2024", {})
+    cat    = dld.get("category_2024", {})
+    rm     = dld.get("rental_market_2024", {})
+
+    c1,c2,c3,c4 = st.columns(4)
+    c1.metric("2024 Value",      f"AED {mf2024.get('total_transaction_value_aed_b',761):.0f}B", "+20.4%")
+    c2.metric("Off-Plan Growth", f"+{cat.get('offplan_yoy_pct',43.7):.1f}%")
+    c3.metric("Rental Contracts",f"{rm.get('total_contracts',965000):,}")
+    c4.metric("New Investors",   f"{mf2024.get('new_investors',108000):,}", "+37%")
+
+    col_chart, col_insight = st.columns([3,1])
+    with col_chart:
+        st.subheader("Property Type Breakdown 2024 (AED B)")
+        types = {'Units':pt.get('units_value_aed_b',318),'Land':pt.get('land_value_aed_b',234),
+                 'Villa':pt.get('villa_value_aed_b',126),'Building':pt.get('building_value_aed_b',82)}
+        fig = px.pie(values=list(types.values()), names=list(types.keys()),
+                     color_discrete_sequence=['#C9A84C','#22c55e','#3b82f6','#ef4444'], height=320)
+        fig.update_layout(paper_bgcolor='#0A0C0F', font_color='#E8E6E0')
+        st.plotly_chart(fig, use_container_width=True)
+    with col_insight:
+        insight("Market Composition",
+            f"<strong>Units (apartments)</strong> dominate at AED {pt.get('units_value_aed_b',318):.0f}B "
+            f"(+{pt.get('units_yoy_pct',37.2):.1f}% YoY) — driven by off-plan launches and waterfront demand.<br><br>"
+            f"<strong>Villa</strong> segment grew +{pt.get('villa_yoy_pct',34.7):.1f}% — post-COVID lifestyle shift persists.<br><br>"
+            f"<strong>Buildings</strong> surged +{pt.get('building_yoy_pct',53.4):.1f}% — institutional investors acquiring income assets.")
+
+    col_chart2, col_insight2 = st.columns([3,1])
+    with col_chart2:
+        st.subheader("Global Investor Origins 2024 (AED B)")
+        geo = dld.get("investor_geography_2024", {})
+        geo_d = {'Asia':geo.get('asia_aed_b',301.9),'Europe':geo.get('europe_aed_b',133.1),
+                 'N. America':geo.get('north_america_aed_b',41),'Africa':geo.get('africa_aed_b',34.6),
+                 'Oceania':geo.get('oceania_aed_b',8.2)}
+        fig2 = px.bar(x=list(geo_d.keys()), y=list(geo_d.values()),
+                      text=list(geo_d.values()), color=list(geo_d.values()),
+                      color_continuous_scale=['#1a2a3a','#C9A84C'], height=300)
+        fig2.update_traces(texttemplate='AED %{text:.0f}B', textposition='outside')
+        fig2.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
+                           font_color='#E8E6E0', coloraxis_showscale=False,
+                           margin=dict(l=0,r=0,t=10,b=10), xaxis_title="", yaxis_title="AED Billion")
+        st.plotly_chart(fig2, use_container_width=True)
+    with col_insight2:
+        insight("Capital Origins",
+            f"<strong>Asia dominates</strong> at AED {geo.get('asia_aed_b',301.9):.0f}B "
+            f"({geo.get('asia_pct',58)}% of total) — India, China, Pakistan, GCC.<br><br>"
+            f"<strong>Europe</strong> contributes AED {geo.get('europe_aed_b',133.1):.0f}B "
+            f"({geo.get('europe_pct',25)}%) — lifestyle migration, second homes.<br><br>"
+            f"<strong>N. America</strong> growing at AED {geo.get('north_america_aed_b',41):.0f}B — "
+            f"attracted by high yields vs London/NY.")
 
     if not mv.empty:
-        sales_mv = mv[mv['Title']=='Sales'].copy()
-        by_year  = sales_mv.groupby('Year')['Value'].sum().reset_index()
-        fig = px.bar(by_year, x='Year', y='Value',
-                     text='Value', color='Value',
-                     color_continuous_scale=['#1a2a3a','#C9A84C'])
-        fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
-        fig.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
-                          font_color='#E8E6E0', height=360,
-                          coloraxis_showscale=False, margin=dict(l=0,r=0,t=10,b=10))
-        st.plotly_chart(fig, use_container_width=True)
+        col_chart3, col_insight3 = st.columns([3,1])
+        with col_chart3:
+            st.subheader("Annual Transaction Volume Trend")
+            sales_mv = mv[mv['Title']=='Sales'].groupby('Year')['Value'].sum().reset_index()
+            fig3 = px.bar(sales_mv, x='Year', y='Value', text='Value',
+                          color='Value', color_continuous_scale=['#1a2a3a','#C9A84C'], height=300)
+            fig3.update_traces(texttemplate='%{text:.2s}', textposition='outside')
+            fig3.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
+                               font_color='#E8E6E0', coloraxis_showscale=False,
+                               margin=dict(l=0,r=0,t=10,b=10))
+            st.plotly_chart(fig3, use_container_width=True)
+        with col_insight3:
+            latest_yr  = int(sales_mv['Year'].max())
+            latest_val = sales_mv[sales_mv['Year']==latest_yr]['Value'].values[0]
+            prev_val   = sales_mv[sales_mv['Year']==latest_yr-1]['Value'].values[0] if latest_yr-1 in sales_mv['Year'].values else 0
+            yoy        = ((latest_val/prev_val)-1)*100 if prev_val > 0 else 0
+            insight("Volume Trend",
+                f"Latest year ({latest_yr}): <strong>AED {latest_val/1e9:.1f}B</strong> "
+                f"({yoy:+.1f}% YoY).<br><br>"
+                f"Dubai's market has grown <strong>consistently since 2020</strong>, "
+                f"with no signs of contraction.<br><br>"
+                f"DLD 2024 Annual Report confirms total market at <strong>AED 761B</strong> — "
+                f"an all-time record.")
 
-        latest = int(sales_mv['Year'].max())
-        latest_val = int(sales_mv[sales_mv['Year']==latest]['Value'].sum())
-        c1,c2 = st.columns(2)
-        c1.metric(f"Latest Year ({latest})", f"AED {latest_val/1e9:.1f}B")
-        if latest-1 in sales_mv['Year'].values:
-            prev = int(sales_mv[sales_mv['Year']==latest-1]['Value'].sum())
-            yoy  = round((latest_val/max(prev,1)-1)*100,1)
-            c2.metric("YoY Change", f"{yoy:+.1f}%")
-
-    if not hu.empty:
-        st.subheader("Housing Units by Type")
-        fig2 = px.bar(hu, x='unit_type_en', y='count',
-                      text='count', color='count',
-                      color_continuous_scale=['#1a3a2a','#22c55e'])
-        fig2.update_traces(texttemplate='%{text:,}', textposition='outside')
-        fig2.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
-                           font_color='#E8E6E0', height=300,
-                           coloraxis_showscale=False, margin=dict(l=0,r=0,t=10,b=10))
-        st.plotly_chart(fig2, use_container_width=True)
-
-# PAGE: BROKERS
+# ── BROKERS ───────────────────────────────────────────────
 elif page == "🤝 Brokers":
-    st.subheader("Licensed Real Estate Brokers — UAE")
     if not br.empty:
         br['license_end_date'] = pd.to_datetime(br['license_end_date'], errors='coerce')
-        active = br[br['license_end_date'] > pd.Timestamp.now()]
+        active   = br[br['license_end_date'] > pd.Timestamp.now()]
+        expiring = br[(br['license_end_date']>pd.Timestamp.now()) &
+                      (br['license_end_date']<pd.Timestamp.now()+pd.DateOffset(months=3))]
         c1,c2,c3 = st.columns(3)
         c1.metric("Total Licensed", f"{len(br):,}")
         c2.metric("Active Now",     f"{len(active):,}")
-        c3.metric("Expiring Soon",  f"{len(br[(br['license_end_date']>pd.Timestamp.now()) & (br['license_end_date']<pd.Timestamp.now()+pd.DateOffset(months=3))]):,}")
-
-        st.subheader("Broker Directory")
+        c3.metric("Expiring <3mo",  f"{len(expiring):,}")
+        insight("Broker Market",
+            f"Dubai has <strong>{len(br):,} licensed brokers</strong> — one of the highest concentrations globally. "
+            f"<strong>{len(active):,} are currently active</strong>. "
+            f"With <strong>{mf.get('total_transaction_volume',226000):,} annual transactions</strong>, "
+            f"that's roughly {mf.get('total_transaction_volume',226000)//max(len(active),1)} deals per active broker per year.")
         search = st.text_input("Search broker name", "")
-        df_show = active[['broker_name_en','phone','license_start_date','license_end_date','real_estate_number']].copy()
-        df_show.columns = ['Name','Phone','License Start','License End','RE Number']
+        df_show = active[['broker_name_en','phone','license_start_date','license_end_date']].copy()
         if search:
-            df_show = df_show[df_show['Name'].str.contains(search, case=False, na=False)]
+            df_show = df_show[df_show['broker_name_en'].str.contains(search,case=False,na=False)]
         st.caption(f"{len(df_show):,} brokers")
         st.dataframe(df_show.reset_index(drop=True), use_container_width=True, hide_index=True, height=500)
 
-# PAGE: TRANSACTIONS
+# ── TRANSACTIONS ──────────────────────────────────────────
 elif page == "📋 Transactions":
     st.subheader("DLD Transaction Records")
+    insight("Data Quality",
+        f"<strong>{len(tx):,} real sale transactions</strong> from DLD. "
+        f"Each record is a registered sale with official price, area, property type, and date. "
+        f"Use the search and area filter to drill into specific communities.")
     search = st.text_input("Search area or property type", "")
-    df_t = tx_f.copy()
+    df_t   = tx_f.copy() if not tx_f.empty else tx.copy()
     if search:
         df_t = df_t[df_t.apply(lambda r: search.lower() in str(r).lower(), axis=1)]
-
-    cols_show = [c for c in ['our_area','property_sub_type_en','rooms_en','actual_worth',
-                              'meter_sale_price','procedure_area','instance_date',
-                              'nearest_metro_en','trans_group_en'] if c in df_t.columns]
-    display = df_t[cols_show].copy()
-    rename = {'our_area':'Area','property_sub_type_en':'Type','rooms_en':'Rooms',
-               'actual_worth':'Value AED','meter_sale_price':'AED/sqft',
-               'procedure_area':'sqm','instance_date':'Date',
-               'nearest_metro_en':'Metro','trans_group_en':'Transaction'}
-    display = display.rename(columns={k:v for k,v in rename.items() if k in display.columns})
-    if 'Value AED' in display.columns:
-        display['Value AED'] = display['Value AED'].apply(lambda x: f"{x:,.0f}" if pd.notna(x) else "")
-    if 'AED/sqft' in display.columns:
-        display['AED/sqft'] = display['AED/sqft'].apply(lambda x: f"{x:,.0f}" if pd.notna(x) else "")
+    cols    = [c for c in ['area_name_en','property_sub_type_en','rooms_en','actual_worth',
+                            'meter_sale_price','instance_date','nearest_metro_en'] if c in df_t.columns]
+    display = df_t[cols].copy().rename(columns={
+        'area_name_en':'Area','property_sub_type_en':'Type','rooms_en':'Rooms',
+        'actual_worth':'Value AED','meter_sale_price':'AED/sqft',
+        'instance_date':'Date','nearest_metro_en':'Metro'})
+    for col in ['Value AED','AED/sqft']:
+        if col in display.columns:
+            display[col] = pd.to_numeric(display[col],errors='coerce').apply(
+                lambda x: f"{x:,.0f}" if pd.notna(x) else "")
     st.caption(f"{len(display):,} transactions")
     st.dataframe(display.reset_index(drop=True), use_container_width=True, hide_index=True, height=500)
