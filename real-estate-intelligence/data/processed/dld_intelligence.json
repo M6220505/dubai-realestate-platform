@@ -1,406 +1,162 @@
 {
-  "generated_at": "2026-03-16T18:36:44.379111+00:00",
+  "generated_at": "2026-03-18T00:16:04.338726+00:00",
   "data_sources": [
-    "rent_contracts",
-    "sale_index",
-    "valuations",
-    "projects",
-    "units",
-    "permits"
+    "transactions",
+    "brokers",
+    "housing_units",
+    "building_permits",
+    "transaction_movements"
   ],
-  "rental_yields": {
-    "Dubai Marina": {
-      "avg_annual_rent_aed": 105000,
-      "avg_sqft": 1302,
-      "rental_psf_annual": 80.62,
-      "estimated_yield_pct": 3.84,
-      "renewal_rate_pct": 36.2,
-      "sample_size": 105
-    },
+  "area_transactions": {
     "Business Bay": {
-      "avg_annual_rent_aed": 85000,
-      "avg_sqft": 958,
-      "rental_psf_annual": 88.73,
-      "estimated_yield_pct": 4.67,
-      "renewal_rate_pct": 35.6,
-      "sample_size": 59
-    },
-    "Palm Jumeirah": {
-      "avg_annual_rent_aed": 160000,
-      "avg_sqft": 1588,
-      "rental_psf_annual": 100.78,
-      "estimated_yield_pct": 3.15,
-      "renewal_rate_pct": 46.9,
-      "sample_size": 32
-    },
-    "Downtown Dubai": {
-      "avg_annual_rent_aed": 110000,
-      "avg_sqft": 985,
-      "rental_psf_annual": 111.69,
-      "estimated_yield_pct": 3.99,
-      "renewal_rate_pct": 28.6,
-      "sample_size": 56
-    }
-  },
-  "price_index": {
-    "latest_date": "2024-05",
-    "flat_yoy_growth_pct": 17.05,
-    "villa_yoy_growth_pct": 22.31,
-    "flat_index": 1.826,
-    "villa_index": 1.705,
-    "monthly_series": [
-      {
-        "date": "2021-06",
-        "flat_index": 1.088,
-        "villa_index": 1.013
+      "total_transactions": 244,
+      "total_sales": 209,
+      "avg_sale_psf": 21777.0,
+      "median_sale_psf": 20451.0,
+      "avg_sale_value": 2064965.0,
+      "room_mix": {
+        "1 B/R": 72,
+        "Studio": 53,
+        "2 B/R": 38,
+        "Office": 31
       },
-      {
-        "date": "2021-07",
-        "flat_index": 1.101,
-        "villa_index": 1.039
-      },
-      {
-        "date": "2021-08",
-        "flat_index": 1.116,
-        "villa_index": 1.072
-      },
-      {
-        "date": "2021-09",
-        "flat_index": 1.14,
-        "villa_index": 1.098
-      },
-      {
-        "date": "2021-10",
-        "flat_index": 1.16,
-        "villa_index": 1.13
-      },
-      {
-        "date": "2021-11",
-        "flat_index": 1.182,
-        "villa_index": 1.167
-      },
-      {
-        "date": "2021-12",
-        "flat_index": 1.207,
-        "villa_index": 1.193
-      },
-      {
-        "date": "2022-01",
-        "flat_index": 1.228,
-        "villa_index": 1.262
-      },
-      {
-        "date": "2022-02",
-        "flat_index": 1.259,
-        "villa_index": 1.284
-      },
-      {
-        "date": "2022-03",
-        "flat_index": 1.285,
-        "villa_index": 1.297
-      },
-      {
-        "date": "2022-04",
-        "flat_index": 1.331,
-        "villa_index": 1.318
-      },
-      {
-        "date": "2022-05",
-        "flat_index": 1.368,
-        "villa_index": 1.338
-      },
-      {
-        "date": "2022-06",
-        "flat_index": 1.393,
-        "villa_index": 1.347
-      },
-      {
-        "date": "2022-07",
-        "flat_index": 1.414,
-        "villa_index": 1.349
-      },
-      {
-        "date": "2022-08",
-        "flat_index": 1.428,
-        "villa_index": 1.343
-      },
-      {
-        "date": "2022-09",
-        "flat_index": 1.442,
-        "villa_index": 1.353
-      },
-      {
-        "date": "2022-10",
-        "flat_index": 1.459,
-        "villa_index": 1.355
-      },
-      {
-        "date": "2022-11",
-        "flat_index": 1.482,
-        "villa_index": 1.343
-      },
-      {
-        "date": "2022-12",
-        "flat_index": 1.495,
-        "villa_index": 1.34
-      },
-      {
-        "date": "2023-01",
-        "flat_index": 1.514,
-        "villa_index": 1.332
-      },
-      {
-        "date": "2023-02",
-        "flat_index": 1.528,
-        "villa_index": 1.358
-      },
-      {
-        "date": "2023-03",
-        "flat_index": 1.539,
-        "villa_index": 1.366
-      },
-      {
-        "date": "2023-04",
-        "flat_index": 1.548,
-        "villa_index": 1.374
-      },
-      {
-        "date": "2023-05",
-        "flat_index": 1.56,
-        "villa_index": 1.394
-      },
-      {
-        "date": "2023-06",
-        "flat_index": 1.591,
-        "villa_index": 1.413
-      },
-      {
-        "date": "2023-07",
-        "flat_index": 1.612,
-        "villa_index": 1.457
-      },
-      {
-        "date": "2023-08",
-        "flat_index": 1.641,
-        "villa_index": 1.508
-      },
-      {
-        "date": "2023-09",
-        "flat_index": 1.665,
-        "villa_index": 1.539
-      },
-      {
-        "date": "2023-10",
-        "flat_index": 1.686,
-        "villa_index": 1.559
-      },
-      {
-        "date": "2023-11",
-        "flat_index": 1.693,
-        "villa_index": 1.592
-      },
-      {
-        "date": "2023-12",
-        "flat_index": 1.717,
-        "villa_index": 1.617
-      },
-      {
-        "date": "2024-01",
-        "flat_index": 1.73,
-        "villa_index": 1.652
-      },
-      {
-        "date": "2024-02",
-        "flat_index": 1.76,
-        "villa_index": 1.658
-      },
-      {
-        "date": "2024-03",
-        "flat_index": 1.79,
-        "villa_index": 1.701
-      },
-      {
-        "date": "2024-04",
-        "flat_index": 1.805,
-        "villa_index": 1.699
-      },
-      {
-        "date": "2024-05",
-        "flat_index": 1.826,
-        "villa_index": 1.705
-      }
-    ]
-  },
-  "transactions": {},
-  "valuations": {
-    "Dubai Marina": {
-      "median_val_psf_aed": 1410,
-      "median_property_value": 1997157,
-      "sample_size": 246
-    },
-    "Business Bay": {
-      "median_val_psf_aed": 1120,
-      "median_property_value": 1062181,
-      "sample_size": 133
-    },
-    "Palm Jumeirah": {
-      "median_val_psf_aed": 1500,
-      "median_property_value": 2586055,
-      "sample_size": 63
-    },
-    "Downtown Dubai": {
-      "median_val_psf_aed": 1653,
-      "median_property_value": 2100000,
-      "sample_size": 185
-    }
-  },
-  "supply_pipeline": {
-    "Dubai Marina": {
-      "total_projects": 96,
-      "active_projects": 27,
-      "pipeline_units": 13503,
-      "avg_completion_pct": 39.3,
-      "top_developers": {
-        "اعمار العقارية (ش . م. ع)": 54,
-        "إعمار للتطوير (مساهمة عامة)": 18,
-        "مرسى دبي المرحلة الاولى (ش.ذ.م.م)": 7
-      }
-    },
-    "Business Bay": {
-      "total_projects": 156,
-      "active_projects": 39,
-      "pipeline_units": 25361,
-      "avg_completion_pct": 35.6,
-      "top_developers": {
-        "الخليج التجاري (ش.ذ.م.م)": 112,
-        "دبي للعقارات (ش.ذ.م.م)": 36,
-        "مراس العقارية (ش.ذ.م.م)": 4
-      }
-    },
-    "Palm Jumeirah": {
-      "total_projects": 57,
-      "active_projects": 18,
-      "pipeline_units": 2980,
-      "avg_completion_pct": 38.2,
-      "top_developers": {
-        "شركة نخيل (ش.م.خ)": 29,
-        "شركة النخلة - جميرا (ش.ذ.م.م)": 27,
-        "قرية جميرا (ش.ذ.م.م)": 1
-      }
-    },
-    "Downtown Dubai": {
-      "total_projects": 195,
-      "active_projects": 35,
-      "pipeline_units": 11662,
-      "avg_completion_pct": 39.8,
-      "top_developers": {
-        "مجموعة ميدان (ش.ذ.م.م)": 92,
-        "اعمار العقارية (ش . م. ع)": 49,
-        "شوبا ش.ذ.م.م": 24
-      }
+      "liquidity_score": 17.37
     },
     "Jumeirah Beach Residence": {
-      "total_projects": 0,
-      "active_projects": 0,
-      "pipeline_units": 0,
-      "avg_completion_pct": null,
-      "top_developers": {}
-    }
-  },
-  "units_inventory": {
-    "Dubai Marina": {
-      "total_units": 140,
-      "avg_sqft": 1080.1,
-      "type_mix": {
-        "Flat": 120,
-        "Hotel Rooms": 8,
-        "Shop": 5,
-        "Store": 3
-      },
-      "room_mix": {
-        "1 B/R": 51,
-        "2 B/R": 42,
-        "Studio": 16,
-        "3 B/R": 13
-      },
-      "freehold_pct": 99.2
-    },
-    "Business Bay": {
-      "total_units": 197,
-      "avg_sqft": 811.1,
-      "type_mix": {
-        "Flat": 130,
-        "Office": 39,
-        "Hotel Apartment": 12,
-        "Hotel Rooms": 8
-      },
-      "room_mix": {
-        "1 B/R": 62,
-        "Studio": 48,
-        "Office": 35,
-        "2 B/R": 32
-      },
-      "freehold_pct": 97.9
+      "total_transactions": 0,
+      "total_sales": 0,
+      "avg_sale_psf": null,
+      "median_sale_psf": null,
+      "avg_sale_value": null,
+      "room_mix": {},
+      "liquidity_score": 0.0
     },
     "Palm Jumeirah": {
-      "total_units": 33,
-      "avg_sqft": 1585.9,
-      "type_mix": {
-        "Flat": 20,
-        "Hotel Rooms": 6,
-        "Hotel Apartment": 4,
-        "Office": 2
-      },
+      "total_transactions": 120,
+      "total_sales": 87,
+      "avg_sale_psf": 21877.0,
+      "median_sale_psf": 17888.0,
+      "avg_sale_value": 6837347.0,
       "room_mix": {
-        "2 B/R": 12,
-        "1 B/R": 9,
-        "Studio": 4,
-        "3 B/R": 4
+        "2 B/R": 26,
+        "3 B/R": 18,
+        "1 B/R": 14,
+        "Studio": 7
       },
-      "freehold_pct": 100.0
+      "liquidity_score": 7.23
+    },
+    "Dubai Marina": {
+      "total_transactions": 407,
+      "total_sales": 318,
+      "avg_sale_psf": 20370.0,
+      "median_sale_psf": 15914.0,
+      "avg_sale_value": 2669444.0,
+      "room_mix": {
+        "1 B/R": 116,
+        "2 B/R": 109,
+        "3 B/R": 47,
+        "Studio": 23
+      },
+      "liquidity_score": 26.43
     },
     "Downtown Dubai": {
-      "total_units": 156,
-      "avg_sqft": 937.7,
-      "type_mix": {
-        "Flat": 133,
-        "Office": 10,
-        "Shop": 7,
-        "Store": 3
-      },
+      "total_transactions": 432,
+      "total_sales": 336,
+      "avg_sale_psf": 21270.0,
+      "median_sale_psf": 19116.0,
+      "avg_sale_value": 2648421.0,
       "room_mix": {
-        "1 B/R": 52,
-        "2 B/R": 41,
-        "Studio": 26,
-        "3 B/R": 14
+        "1 B/R": 126,
+        "2 B/R": 85,
+        "Studio": 51,
+        "3 B/R": 30
       },
-      "freehold_pct": 99.4
+      "liquidity_score": 27.93
     }
   },
+  "brokers": {
+    "total_licensed": 5000,
+    "active": 2691
+  },
+  "housing_units": [
+    {
+      "year": 2023,
+      "unit_type_ar": "غرفة/غرف مستقلة",
+      "count": 10794,
+      "unit_type_en": "room /rooms"
+    },
+    {
+      "year": 2023,
+      "unit_type_ar": "  فيلا     ",
+      "count": 152039,
+      "unit_type_en": "villa"
+    },
+    {
+      "year": 2023,
+      "unit_type_ar": "ملحق فيلا     ",
+      "count": 608,
+      "unit_type_en": "Partvilla"
+    },
+    {
+      "year": 2023,
+      "unit_type_ar": "مسكن جماعي",
+      "count": 5130,
+      "unit_type_en": "collective"
+    },
+    {
+      "year": 2023,
+      "unit_type_ar": "شقة ",
+      "count": 661452,
+      "unit_type_en": "Flat"
+    },
+    {
+      "year": 2023,
+      "unit_type_ar": "جزء بيت عربي",
+      "count": 690,
+      "unit_type_en": "Part Arabic house"
+    },
+    {
+      "year": 2023,
+      "unit_type_ar": "بيت عربي",
+      "count": 5685,
+      "unit_type_en": "Arabic house"
+    },
+    {
+      "year": 2023,
+      "unit_type_ar": "أخرى",
+      "count": 1674,
+      "unit_type_en": "others"
+    }
+  ],
   "building_permits": {
-    "total_permits": 5000,
-    "permits_by_year": {
-      "2016": 120,
-      "2017": 138,
-      "2018": 120,
-      "2019": 88,
-      "2020": 67,
-      "2021": 64,
-      "2022": 90,
-      "2023": 128,
-      "2024": 128,
-      "2025": 155,
-      "2026": 1
+    "latest_year": 2025,
+    "by_type": {
+      "Industrial Buildings": 363912,
+      "Investment Villa": 389798,
+      "Multi-Storey Buildings": 2315714,
+      "Private Villa": 744959,
+      "Public Buildings": 257843
+    }
+  },
+  "transaction_movements": {
+    "by_year": {
+      "2010": 169404048214,
+      "2011": 125348855200,
+      "2012": 150386895114,
+      "2013": 285673988992,
+      "2014": 276842512650,
+      "2015": 258070200392,
+      "2016": 205764449039,
+      "2017": 228529661122,
+      "2018": 149290081940,
+      "2019": 162060176195,
+      "2020": 144514227401,
+      "2021": 300933122954,
+      "2022": 532492498717,
+      "2023": 823453157980,
+      "2024": 1044969400181
     },
-    "building_type_mix": {
-      "Private Villa": 1320,
-      "Multi Storey": 790,
-      "Public Building": 420,
-      "Industrial Building": 397,
-      "Floor Area Ratio": 327,
-      "Investment Villa": 317
-    },
-    "recent_count_2024": 128,
-    "recent_count_2023": 128
+    "latest_year": 2024,
+    "latest_value": 1044969400181
   }
 }
