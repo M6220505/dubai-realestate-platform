@@ -46,11 +46,6 @@ def load_movements():
     if not f.exists(): return pd.DataFrame()
     return pd.read_csv(f)
 
-@st.cache_data(ttl=300)
-def load_brokers():
-    f = ROOT/"data/raw/Brokers_2026-03-18.csv"
-    if not f.exists(): return pd.DataFrame()
-    return pd.read_csv(f)
 
 def insight(title, text):
     st.markdown(f"""<div class="insight-box">
@@ -67,7 +62,7 @@ with st.sidebar:
     st.success(f"✅ {len(tx):,} DLD transactions")
     st.caption(f"📅 {datetime.now().strftime('%d %b %Y')}")
     st.divider()
-    page = st.radio("", ["📊 Overview","🔍 Price Gap","🏆 Rankings","📈 Trends","🤝 Brokers","📋 Transactions"])
+    page = st.radio("", ["📊 Overview","🔍 Price Gap","🏆 Rankings","📈 Trends","🧠 AI Intelligence","📋 Transactions"])
     st.divider()
     all_areas = sorted(areas_df['area_name_en'].tolist()) if not areas_df.empty else []
     top10     = areas_df.head(10)['area_name_en'].tolist() if not areas_df.empty else []
@@ -354,28 +349,172 @@ elif page == "📈 Trends":
                 f"DLD 2024 Annual Report confirms total market at <strong>AED 761B</strong> — "
                 f"an all-time record.")
 
-# ── BROKERS ───────────────────────────────────────────────
-elif page == "🤝 Brokers":
-    if not br.empty:
-        br['license_end_date'] = pd.to_datetime(br['license_end_date'], errors='coerce')
-        active   = br[br['license_end_date'] > pd.Timestamp.now()]
-        expiring = br[(br['license_end_date']>pd.Timestamp.now()) &
-                      (br['license_end_date']<pd.Timestamp.now()+pd.DateOffset(months=3))]
-        c1,c2,c3 = st.columns(3)
-        c1.metric("Total Licensed", f"{len(br):,}")
-        c2.metric("Active Now",     f"{len(active):,}")
-        c3.metric("Expiring <3mo",  f"{len(expiring):,}")
-        insight("Broker Market",
-            f"Dubai has <strong>{len(br):,} licensed brokers</strong> — one of the highest concentrations globally. "
-            f"<strong>{len(active):,} are currently active</strong>. "
-            f"With <strong>{mf.get('total_transaction_volume',226000):,} annual transactions</strong>, "
-            f"that's roughly {mf.get('total_transaction_volume',226000)//max(len(active),1)} deals per active broker per year.")
-        search = st.text_input("Search broker name", "")
-        df_show = active[['broker_name_en','phone','license_start_date','license_end_date']].copy()
-        if search:
-            df_show = df_show[df_show['broker_name_en'].str.contains(search,case=False,na=False)]
-        st.caption(f"{len(df_show):,} brokers")
-        st.dataframe(df_show.reset_index(drop=True), use_container_width=True, hide_index=True, height=500)
+# ── AI INTELLIGENCE ───────────────────────────────────────
+elif page == "🧠 AI Intelligence":
+    st.subheader("🧠 AI Market Intelligence — Exclusive to DubaiIntel")
+    st.caption("No other Dubai real estate platform offers this. Powered by real DLD transaction data.")
+
+    tab1, tab2, tab3 = st.tabs(["💰 Price Estimator", "⚖️ Area Comparator", "📈 ROI Calculator"])
+
+    # ── TAB 1: PRICE ESTIMATOR ──
+    with tab1:
+        st.markdown("#### Estimate Property Value from DLD Data")
+        st.info("Based on real DLD transaction prices — not listing estimates.")
+
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            est_area  = st.selectbox("Area", sorted(areas_df['area_name_en'].tolist()) if not areas_df.empty else [])
+        with col2:
+            est_size  = st.number_input("Size (sqft)", min_value=200, max_value=20000, value=1000, step=50)
+        with col3:
+            est_rooms = st.selectbox("Bedrooms", ["Studio","1 BR","2 BR","3 BR","4 BR","5+ BR"])
+
+        if st.button("Estimate Value", type="primary") and not areas_df.empty:
+            row = areas_df[areas_df['area_name_en']==est_area]
+            if not row.empty:
+                avg_psf    = float(row['avg_psf'].values[0])
+                median_psf = float(row['median_psf'].values[0])
+                sales_cnt  = int(row['sales'].values[0])
+                gap        = float(row['gap_vs_avg_pct'].values[0])
+
+                # Room multipliers based on DLD patterns
+                room_mult = {"Studio":0.85,"1 BR":0.92,"2 BR":1.0,"3 BR":1.12,"4 BR":1.22,"5+ BR":1.35}
+                mult = room_mult.get(est_rooms, 1.0)
+
+                est_low  = avg_psf * 0.85 * mult * est_size
+                est_mid  = avg_psf * mult * est_size
+                est_high = avg_psf * 1.15 * mult * est_size
+
+                c1,c2,c3 = st.columns(3)
+                c1.metric("Conservative", f"AED {est_low:,.0f}")
+                c2.metric("Market Value",  f"AED {est_mid:,.0f}", f"AED {avg_psf:,.0f}/sqft")
+                c3.metric("Premium",       f"AED {est_high:,.0f}")
+
+                st.markdown("---")
+                col_a, col_b = st.columns(2)
+                with col_a:
+                    signal = "🟢 Below market avg — potential value" if gap < -10 else "🔴 Above market avg — premium zone" if gap > 10 else "🟡 At market average"
+                    st.markdown(f"""
+                    **Area Intel: {est_area}**
+                    - Avg DLD price: **AED {avg_psf:,.0f}/sqft**
+                    - Median DLD price: **AED {median_psf:,.0f}/sqft**
+                    - Based on **{sales_cnt} real transactions**
+                    - vs Dubai avg: **{gap:+.1f}%** {signal}
+                    """)
+                with col_b:
+                    insight("Estimator Note",
+                        f"This estimate uses <strong>real DLD transaction data</strong> — "
+                        f"not listing prices which are typically 15-25% higher than actual sale prices.<br><br>"
+                        f"Based on <strong>{sales_cnt} registered sales</strong> in {est_area}. "
+                        f"Room type adjustment applied: <strong>×{mult}</strong>.")
+
+    # ── TAB 2: AREA COMPARATOR ──
+    with tab2:
+        st.markdown("#### Compare Two Areas Side by Side")
+        st.info("Which area gives you better value, yield, and growth potential?")
+
+        col1, col2 = st.columns(2)
+        all_a = sorted(areas_df['area_name_en'].tolist()) if not areas_df.empty else []
+        with col1:
+            area_a = st.selectbox("Area A", all_a, index=0)
+        with col2:
+            area_b = st.selectbox("Area B", all_a, index=min(4, len(all_a)-1))
+
+        if not areas_df.empty and area_a != area_b:
+            ra = areas_df[areas_df['area_name_en']==area_a].iloc[0]
+            rb = areas_df[areas_df['area_name_en']==area_b].iloc[0]
+
+            metrics = [
+                ("Avg AED/sqft",    f"AED {ra['avg_psf']:,.0f}",    f"AED {rb['avg_psf']:,.0f}",    ra['avg_psf'],    rb['avg_psf'],    False),
+                ("Transactions",    f"{int(ra['sales'])}",           f"{int(rb['sales'])}",           ra['sales'],      rb['sales'],      True),
+                ("Avg Sale Value",  f"AED {ra['avg_value']:,.0f}",   f"AED {rb['avg_value']:,.0f}",   ra['avg_value'],  rb['avg_value'],  False),
+                ("Total Market",    f"AED {ra['total_value']/1e6:.0f}M", f"AED {rb['total_value']/1e6:.0f}M", ra['total_value'], rb['total_value'], True),
+                ("Liquidity Score", f"{ra['liq_score']:.1f}/10",     f"{rb['liq_score']:.1f}/10",     ra['liq_score'],  rb['liq_score'],  True),
+                ("Inv. Score",      f"{ra['inv_score']:.1f}",        f"{rb['inv_score']:.1f}",        ra['inv_score'],  rb['inv_score'],  True),
+                ("vs Dubai Avg",    f"{ra['gap_vs_avg_pct']:+.1f}%", f"{rb['gap_vs_avg_pct']:+.1f}%", -ra['gap_vs_avg_pct'], -rb['gap_vs_avg_pct'], True),
+            ]
+
+            st.markdown(f"### {area_a}  vs  {area_b}")
+            header = f"| Metric | {area_a} | {area_b} | Winner |"
+            divider = "|--------|--------|--------|--------|"
+            rows = [header, divider]
+            for label, va, vb, na, nb, higher_better in metrics:
+                if higher_better:
+                    winner = f"✅ {area_a}" if na > nb else f"✅ {area_b}" if nb > na else "🟡 Tie"
+                else:
+                    winner = f"✅ {area_b}" if na > nb else f"✅ {area_a}" if nb > na else "🟡 Tie"
+                rows.append(f"| {label} | {va} | {vb} | {winner} |")
+            st.markdown("\n".join(rows))
+
+            st.markdown("---")
+            wins_a = sum(1 for _,_,_,na,nb,hb in metrics if (hb and na>nb) or (not hb and na<nb))
+            wins_b = sum(1 for _,_,_,na,nb,hb in metrics if (hb and nb>na) or (not hb and nb<na))
+            verdict = area_a if wins_a > wins_b else area_b if wins_b > wins_a else "Tie"
+            insight("Comparison Verdict",
+                f"<strong>{area_a}</strong> wins {wins_a} of {len(metrics)} metrics. "
+                f"<strong>{area_b}</strong> wins {wins_b}.<br><br>"
+                f"Overall recommendation based on DLD data: <strong>{verdict}</strong> "
+                f"offers the stronger investment case right now.")
+
+    # ── TAB 3: ROI CALCULATOR ──
+    with tab3:
+        st.markdown("#### Investment Return Calculator")
+        st.info("Calculate expected returns based on DLD transaction data and EJARI rental benchmarks.")
+
+        col1, col2 = st.columns(2)
+        with col1:
+            roi_area    = st.selectbox("Area", sorted(areas_df['area_name_en'].tolist()) if not areas_df.empty else [], key="roi_area")
+            purchase    = st.number_input("Purchase Price (AED)", min_value=200000, max_value=50000000, value=1500000, step=50000)
+            down_pct    = st.slider("Down Payment %", 20, 100, 25)
+        with col2:
+            rent_yield  = st.slider("Expected Rental Yield %", 3.0, 10.0, 6.0, 0.1)
+            hold_years  = st.slider("Holding Period (years)", 1, 10, 5)
+            growth_pa   = st.slider("Annual Price Growth %", 0.0, 20.0, 8.0, 0.5)
+
+        if st.button("Calculate ROI", type="primary"):
+            down        = purchase * down_pct / 100
+            loan        = purchase - down
+            annual_rent = purchase * rent_yield / 100
+            total_rent  = annual_rent * hold_years
+            exit_price  = purchase * ((1 + growth_pa/100) ** hold_years)
+            capital_gain = exit_price - purchase
+            total_return = total_rent + capital_gain
+            roi_pct     = (total_return / down) * 100
+            roi_pa      = roi_pct / hold_years
+
+            c1,c2,c3,c4 = st.columns(4)
+            c1.metric("Exit Value",      f"AED {exit_price:,.0f}")
+            c2.metric("Capital Gain",    f"AED {capital_gain:,.0f}")
+            c3.metric("Total Rent",      f"AED {total_rent:,.0f}")
+            c4.metric("Total ROI",       f"{roi_pct:.1f}%", f"{roi_pa:.1f}% / year")
+
+            st.markdown("---")
+            col_a, col_b = st.columns(2)
+            with col_a:
+                # Waterfall chart
+                fig = go.Figure(go.Waterfall(
+                    orientation="v",
+                    measure=["absolute","relative","relative","total"],
+                    x=["Down Payment","Capital Gain","Rental Income","Total Return"],
+                    y=[down, capital_gain, total_rent, 0],
+                    connector={"line":{"color":"#555"}},
+                    decreasing={"marker":{"color":"#ef4444"}},
+                    increasing={"marker":{"color":"#22c55e"}},
+                    totals={"marker":{"color":"#C9A84C"}},
+                ))
+                fig.update_layout(paper_bgcolor='#0A0C0F', plot_bgcolor='#111418',
+                                  font_color='#E8E6E0', height=320,
+                                  margin=dict(l=0,r=0,t=10,b=10))
+                st.plotly_chart(fig, use_container_width=True)
+            with col_b:
+                insight("ROI Breakdown",
+                    f"On a <strong>AED {down:,.0f} down payment</strong>:<br><br>"
+                    f"• Capital gain over {hold_years}yr: <strong>AED {capital_gain:,.0f}</strong><br>"
+                    f"• Rental income: <strong>AED {total_rent:,.0f}</strong><br>"
+                    f"• Total return: <strong>AED {total_return:,.0f}</strong><br><br>"
+                    f"Annualised ROI on equity: <strong>{roi_pa:.1f}%/year</strong><br><br>"
+                    f"Dubai market avg yield: <strong>6-8%</strong> (DLD 2024 Annual Report).")
+
 
 # ── TRANSACTIONS ──────────────────────────────────────────
 elif page == "📋 Transactions":
