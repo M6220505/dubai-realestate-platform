@@ -55,14 +55,13 @@ tx       = load_transactions()
 areas_df = load_areas()
 dld      = load_dld()
 mv       = load_movements()
-br       = load_brokers()
 
 with st.sidebar:
     st.markdown("## 🏙️ DubaiIntel")
     st.success(f"✅ {len(tx):,} DLD transactions")
     st.caption(f"📅 {datetime.now().strftime('%d %b %Y')}")
     st.divider()
-    page = st.radio("", ["📊 Overview","🔍 Price Gap","🏆 Rankings","📈 Trends","🧠 AI Intelligence","📋 Transactions"])
+    page = st.radio("", ["📊 Overview","🧠 AI Intelligence","🔍 Price Gap","📈 Trends","🏆 Rankings"])
     st.divider()
     all_areas = sorted(areas_df['area_name_en'].tolist()) if not areas_df.empty else []
     top10     = areas_df.head(10)['area_name_en'].tolist() if not areas_df.empty else []
@@ -683,26 +682,3 @@ elif page == "🧠 AI Intelligence":
                     f"Dubai market avg yield: <strong>6-8%</strong> (DLD 2024 Annual Report).")
 
 
-# ── TRANSACTIONS ──────────────────────────────────────────
-elif page == "📋 Transactions":
-    st.subheader("DLD Transaction Records")
-    insight("Data Quality",
-        f"<strong>{len(tx):,} real sale transactions</strong> from DLD. "
-        f"Each record is a registered sale with official price, area, property type, and date. "
-        f"Use the search and area filter to drill into specific communities.")
-    search = st.text_input("Search area or property type", "")
-    df_t   = tx_f.copy() if not tx_f.empty else tx.copy()
-    if search:
-        df_t = df_t[df_t.apply(lambda r: search.lower() in str(r).lower(), axis=1)]
-    cols    = [c for c in ['area_name_en','property_sub_type_en','rooms_en','actual_worth',
-                            'meter_sale_price','instance_date','nearest_metro_en'] if c in df_t.columns]
-    display = df_t[cols].copy().rename(columns={
-        'area_name_en':'Area','property_sub_type_en':'Type','rooms_en':'Rooms',
-        'actual_worth':'Value AED','meter_sale_price':'AED/sqft',
-        'instance_date':'Date','nearest_metro_en':'Metro'})
-    for col in ['Value AED','AED/sqft']:
-        if col in display.columns:
-            display[col] = pd.to_numeric(display[col],errors='coerce').apply(
-                lambda x: f"{x:,.0f}" if pd.notna(x) else "")
-    st.caption(f"{len(display):,} transactions")
-    st.dataframe(display.reset_index(drop=True), use_container_width=True, hide_index=True, height=500)
